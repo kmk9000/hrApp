@@ -17,6 +17,10 @@ function App() {
             phone={employee.phone}
             email={employee.email}
             animal={employee.animal}
+            startDate={employee.startDate}
+            location={employee.location}
+            department={employee.department}
+            skills={employee.skills}
           />
         ))}
       </main>

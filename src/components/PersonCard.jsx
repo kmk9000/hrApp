@@ -10,7 +10,7 @@ export default function Card(props) {
       <p>Start date: {props.startDate}</p>
       <p>Location: {props.location}</p>
       <p>Department: {props.department}</p>
-      <p>Skills: {props.skills}</p>
+      <p>Skills: {props.skills.join(", ")}</p>
     </div>
   );
 }
