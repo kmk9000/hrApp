@@ -7,6 +7,10 @@ export default function Card(props) {
       <p>Phone: {props.phone}</p>
       <p>Email: {props.email}</p>
       <p>Animal: {props.animal}</p>
+      <p>Start date: {props.startDate}</p>
+      <p>Location: {props.location}</p>
+      <p>Department: {props.department}</p>
+      <p>Skills: {props.skills}</p>
     </div>
   );
 }
