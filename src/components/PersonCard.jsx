@@ -8,6 +8,10 @@ export default function Card(props) {
       <p>Email: {props.email}</p>
       <p>Animal: {props.animal}</p>
       <p>Start date: {props.startDate}</p>
+      <p>
+        How many years employed:
+        {new Date().getFullYear() - new Date(props.startDate).getFullYear()}
+      </p>
       <p>Location: {props.location}</p>
       <p>Department: {props.department}</p>
       <p>Skills: {props.skills.join(", ")}</p>
