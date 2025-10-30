@@ -1,4 +1,6 @@
 export default function Card(props) {
+  let yearsEmployed =
+    new Date().getFullYear() - new Date(props.startDate).getFullYear();
   return (
     <div className="card">
       <h2>{props.name}</h2>
@@ -9,8 +11,10 @@ export default function Card(props) {
       <p>Animal: {props.animal}</p>
       <p>Start date: {props.startDate}</p>
       <p>
-        How many years employed:
-        {new Date().getFullYear() - new Date(props.startDate).getFullYear()}
+        Years employed: {yearsEmployed}{" "}
+        {yearsEmployed == 5 ? "Schedule recognition meeting." : ""}
+        {yearsEmployed == 10 ? "Schedule recognition meeting." : ""}
+        {yearsEmployed == 15 ? "Schedule recognition meeting." : ""}
       </p>
       <p>Location: {props.location}</p>
       <p>Department: {props.department}</p>
