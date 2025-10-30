@@ -1,15 +1,28 @@
-export default function Card(props) {
-  let yearsEmployed =
-    new Date().getFullYear() - new Date(props.startDate).getFullYear();
+import animalEmojis from "../assets/animalEmojis.json";
+
+export default function Card({
+  name,
+  title,
+  salary,
+  phone,
+  email,
+  animal,
+  startDate,
+  location,
+  department,
+  skills,
+}) {
+  const yearsEmployed =
+    new Date().getFullYear() - new Date(startDate).getFullYear();
   return (
     <div className="card">
-      <h2>{props.name}</h2>
-      <p>Title: {props.title}</p>
-      <p>Salary: {props.salary}</p>
-      <p>Phone: {props.phone}</p>
-      <p>Email: {props.email}</p>
-      <p>Animal: {props.animal}</p>
-      <p>Start date: {props.startDate}</p>
+      <h2>{name}</h2>
+      <p>Title: {title}</p>
+      <p>Salary: {salary}</p>
+      <p>Phone: {phone}</p>
+      <p>Email: {email}</p>
+      <p>Animal: {animalEmojis[animal]}</p>
+      <p>Start date: {startDate}</p>
       <p>
         Years employed: {yearsEmployed}{" "}
         {yearsEmployed == 5 ? "🎉 Schedule recognition meeting." : ""}
@@ -17,9 +30,9 @@ export default function Card(props) {
         {yearsEmployed == 15 ? "🎉 Schedule recognition meeting." : ""}
         {yearsEmployed < 0.5 ? "🔔 Schedule probation review." : ""}
       </p>
-      <p>Location: {props.location}</p>
-      <p>Department: {props.department}</p>
-      <p>Skills: {props.skills.join(", ")}</p>
+      <p>Location: {location}</p>
+      <p>Department: {department}</p>
+      <p>Skills: {skills.join(", ")}</p>
     </div>
   );
 }
