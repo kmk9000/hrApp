@@ -21,15 +21,21 @@ export default function Card({
       <p>Salary: {salary}</p>
       <p>Phone: {phone}</p>
       <p>Email: {email}</p>
-      <p>Animal: {animalEmojis[animal]}</p>
-      <p>Start date: {startDate}</p>
       <p>
-        Years employed: {yearsEmployed}{" "}
+        Animal:
+        {animalEmojis[animal]}
+      </p>
+      <p>Start date: {startDate}</p>
+      <p>Years employed: {yearsEmployed}</p>
+      <div style={{ color: "red" }}>
+        {yearsEmployed < 0.5 ? "🔔 Schedule probation review." : ""}
+      </div>
+      <div style={{ color: "green" }}>
         {yearsEmployed == 5 ? "🎉 Schedule recognition meeting." : ""}
         {yearsEmployed == 10 ? "🎉 Schedule recognition meeting." : ""}
         {yearsEmployed == 15 ? "🎉 Schedule recognition meeting." : ""}
-        {yearsEmployed < 0.5 ? "🔔 Schedule probation review." : ""}
-      </p>
+      </div>
+
       <p>Location: {location}</p>
       <p>Department: {department}</p>
       <p>Skills: {skills.join(", ")}</p>
