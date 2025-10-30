@@ -12,9 +12,10 @@ export default function Card(props) {
       <p>Start date: {props.startDate}</p>
       <p>
         Years employed: {yearsEmployed}{" "}
-        {yearsEmployed == 5 ? "Schedule recognition meeting." : ""}
-        {yearsEmployed == 10 ? "Schedule recognition meeting." : ""}
-        {yearsEmployed == 15 ? "Schedule recognition meeting." : ""}
+        {yearsEmployed == 5 ? "🎉 Schedule recognition meeting." : ""}
+        {yearsEmployed == 10 ? "🎉 Schedule recognition meeting." : ""}
+        {yearsEmployed == 15 ? "🎉 Schedule recognition meeting." : ""}
+        {yearsEmployed < 0.5 ? "🔔 Schedule probation review." : ""}
       </p>
       <p>Location: {props.location}</p>
       <p>Department: {props.department}</p>
