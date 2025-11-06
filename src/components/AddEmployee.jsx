@@ -1,17 +1,7 @@
 import { useState } from "react";
-export default function AddEmployee() {
-  const [formData, setFormData] = useState({
-    name: "",
-    title: "",
-    salary: "",
-    phone: "",
-    email: "",
-    animal: "",
-    startDate: "",
-    location: "",
-    department: "",
-    skills: "",
-  });
+// import { useNavigate } from "react-router-dom";
+export default function AddEmployee({ formData, setFormData, handleClick }) {
+  // const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData((prevState) => {
@@ -21,8 +11,13 @@ export default function AddEmployee() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handleClick();
-    console.log(formData);
+    const employeeData = {
+      ...formData,
+      skills: formData.skills.split(",").map((skill) => skill.trim()),
+    };
+    handleClick(employeeData);
+    console.log(employeeData);
+
     setFormData({
       name: "",
       title: "",
@@ -37,8 +32,10 @@ export default function AddEmployee() {
     });
   };
 
+  //   navigate("/");
+
   return (
-    <>
+    <div className="card">
       <h2>Add Employee</h2>
       <form onSubmit={handleSubmit}>
         {Object.keys(formData).map((key) => (
@@ -52,10 +49,27 @@ export default function AddEmployee() {
             />
           </div>
         ))}
-        <button onClick={handleSubmit} type="submit">
-          Add employee
+        <button type="submit">Add employee</button>
+        <button
+          type="reset"
+          onClick={() => {
+            setFormData({
+              name: "",
+              title: "",
+              salary: "",
+              phone: "",
+              email: "",
+              animal: "",
+              startDate: "",
+              location: "",
+              department: "",
+              skills: "",
+            });
+          }}
+        >
+          Reset
         </button>
       </form>
-    </>
+    </div>
   );
 }

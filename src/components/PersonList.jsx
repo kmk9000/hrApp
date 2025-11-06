@@ -1,5 +1,5 @@
 import PersonCard from "./PersonCard";
-import employeeData from "../assets/employeeData.json";
+// import employeeData from "../assets/employeeData.json";
 // comment: former js data import
 // import employees from "../data";
 // export default function PersonList() {
@@ -8,8 +8,8 @@ import employeeData from "../assets/employeeData.json";
 //   ));
 // }
 
-export default function PersonList() {
-  return employeeData.map((employee) => (
+export default function PersonList({ employees }) {
+  return employees.map((employee) => (
     <PersonCard key={employee.id} {...employee} />
   ));
 }
