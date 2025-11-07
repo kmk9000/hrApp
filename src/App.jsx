@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import PersonList from "./components/PersonList";
 import AddEmployee from "./components/AddEmployee";
 import employeeData from "./assets/employeeData.json";
+import About from "./components/About";
 
 function App() {
   const [employees, setEmployees] = useState(employeeData);
@@ -40,7 +41,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<PersonList employees={employees} />} />
-            <Route path="/about" element={<div>About Page</div>} />
+            <Route path="/about" element={<About />} />
             <Route
               path="/add-employee"
               element={
