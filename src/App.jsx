@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -34,18 +34,28 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <Header />
-      <main>
-        <PersonList employees={employees} />
-        <AddEmployee
-          formData={formData}
-          setFormData={setFormData}
-          handleClick={handleClick}
-        />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="container">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<PersonList employees={employees} />} />
+            <Route path="/about" element={<div>About Page</div>} />
+            <Route
+              path="/add-employee"
+              element={
+                <AddEmployee
+                  formData={formData}
+                  setFormData={setFormData}
+                  handleClick={handleClick}
+                />
+              }
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
