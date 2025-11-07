@@ -1,8 +1,4 @@
-import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 export default function AddEmployee({ formData, setFormData, handleClick }) {
-  // const navigate = useNavigate();
-
   const handleChange = (e) => {
     setFormData((prevState) => {
       return { ...prevState, [e.target.name]: e.target.value };
@@ -31,8 +27,6 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
       skills: "",
     });
   };
-
-  //   navigate("/");
 
   return (
     <div className="card">

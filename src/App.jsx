@@ -27,15 +27,7 @@ function App() {
       ...employees,
       {
         id: Date.now(),
-        name: formData.name,
-        title: formData.title,
-        salary: formData.salary,
-        phone: formData.phone,
-        email: formData.email,
-        animal: formData.animal,
-        startDate: formData.startDate,
-        location: formData.location,
-        department: formData.department,
+        ...employeeData,
         skills: formData.skills.split(",").map((skill) => skill.trim()),
       },
     ]);
