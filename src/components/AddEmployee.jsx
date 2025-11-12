@@ -63,6 +63,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         <input
           id="salary"
           name="salary"
+          type="number"
           value={formData.salary}
           onChange={handleChange}
         />
@@ -95,6 +96,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         <input
           id="startDate"
           name="startDate"
+          type="date"
           value={formData.startDate}
           onChange={handleChange}
         />

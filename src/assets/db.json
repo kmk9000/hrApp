@@ -1,7 +1,7 @@
 {
   "employees": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Aino Virtanen",
       "title": "HR Manager",
       "salary": 4200,
@@ -11,10 +11,14 @@
       "startDate": "2025-04-01",
       "location": "Helsinki",
       "department": "Human Resources",
-      "skills": ["Recruiting", "Communication", "Employee Relations"]
+      "skills": [
+        "Recruiting",
+        "Communication",
+        "Employee Relations"
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Mikko Korhonen",
       "title": "Software Developer",
       "salary": 4800,
@@ -24,10 +28,15 @@
       "startDate": "2010-08-15",
       "location": "Espoo",
       "department": "Engineering",
-      "skills": ["JavaScript", "React", "Node.js", "TypeScript"]
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "TypeScript"
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Sara Mäkinen",
       "title": "Marketing Specialist",
       "salary": 3800,
@@ -37,10 +46,15 @@
       "startDate": "2019-11-03",
       "location": "Helsinki",
       "department": "Marketing",
-      "skills": ["Social Media", "Content Creation", "SEO", "Analytics"]
+      "skills": [
+        "Social Media",
+        "Content Creation",
+        "SEO",
+        "Analytics"
+      ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Jussi Lahtinen",
       "title": "Sales Manager",
       "salary": 4500,
@@ -50,10 +64,15 @@
       "startDate": "2017-06-20",
       "location": "Tampere",
       "department": "Sales",
-      "skills": ["Negotiation", "CRM", "Client Management", "Strategy"]
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Client Management",
+        "Strategy"
+      ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Emma Järvinen",
       "title": "UX Designer",
       "salary": 4300,
@@ -63,10 +82,15 @@
       "startDate": "2021-01-10",
       "location": "Helsinki",
       "department": "Design",
-      "skills": ["Figma", "User Research", "Prototyping", "UI Design"]
+      "skills": [
+        "Figma",
+        "User Research",
+        "Prototyping",
+        "UI Design"
+      ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Thomas Andersson",
       "title": "Data Scientist",
       "salary": 5200,
@@ -76,10 +100,15 @@
       "startDate": "2019-03-25",
       "location": "Espoo",
       "department": "Data Science",
-      "skills": ["Python", "Machine Learning", "SQL", "Statistics"]
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "SQL",
+        "Statistics"
+      ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Liisa Nieminen",
       "title": "Financial Analyst",
       "salary": 4100,
@@ -89,10 +118,15 @@
       "startDate": "2018-09-12",
       "location": "Helsinki",
       "department": "Finance",
-      "skills": ["Excel", "Financial Modeling", "Budgeting", "Reporting"]
+      "skills": [
+        "Excel",
+        "Financial Modeling",
+        "Budgeting",
+        "Reporting"
+      ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Alex Chen",
       "title": "DevOps Engineer",
       "salary": 5100,
@@ -102,10 +136,15 @@
       "startDate": "2020-05-18",
       "location": "Remote",
       "department": "Engineering",
-      "skills": ["AWS", "Docker", "Kubernetes", "CI/CD"]
+      "skills": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "CI/CD"
+      ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Maria Virtanen",
       "title": "Product Manager",
       "salary": 5500,
@@ -123,7 +162,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Daniel Schmidt",
       "title": "QA Engineer",
       "salary": 3900,
@@ -133,10 +172,15 @@
       "startDate": "2022-07-30",
       "location": "Espoo",
       "department": "Quality Assurance",
-      "skills": ["Test Automation", "Selenium", "Jest", "Manual Testing"]
+      "skills": [
+        "Test Automation",
+        "Selenium",
+        "Jest",
+        "Manual Testing"
+      ]
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Hanna Laine",
       "title": "Customer Support Lead",
       "salary": 3700,
@@ -154,7 +198,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Peter Johnson",
       "title": "CTO",
       "salary": 7500,
@@ -170,6 +214,34 @@
         "Team Management",
         "Strategy"
       ]
+    },
+    {
+      "id": "9dbc",
+      "name": "Samantha Fisher",
+      "title": "Spy",
+      "salary": "5555",
+      "phone": "+1 (603) 996-7052",
+      "email": "vasugym@mailinator.com",
+      "animal": "Cat",
+      "isFavourite": false
+    },
+    {
+      "id": "cbaa",
+      "name": "Lawrence Ford",
+      "title": "Et adipisicing sint ",
+      "salary": "2",
+      "phone": "+1 (421) 904-2584",
+      "email": "vegulaxigu@mailinator.com",
+      "animal": "Nesciunt tempore e",
+      "startDate": "1984-04-20",
+      "location": "Incididunt tempora i",
+      "department": "Dolores voluptas cil",
+      "skills": [
+        "Deserunt",
+        "neque",
+        "bland"
+      ],
+      "isFavourite": false
     }
   ]
 }
