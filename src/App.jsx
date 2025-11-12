@@ -5,11 +5,11 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PersonList from "./components/PersonList";
 import AddEmployee from "./components/AddEmployee";
-import employeeData from "./assets/employeeData.json";
+import db from "./assets/db.json";
 import About from "./components/About";
 
 function App() {
-  const [employees, setEmployees] = useState(employeeData);
+  const [employees, setEmployees] = useState(db.employees);
   const [formData, setFormData] = useState({
     name: "",
     title: "",
@@ -23,12 +23,12 @@ function App() {
     skills: "",
   });
 
-  const handleClick = (employeeData) => {
+  const handleClick = (employees) => {
     setEmployees([
       ...employees,
       {
         id: Date.now(),
-        ...employeeData,
+        ...employees,
         skills: formData.skills.split(",").map((skill) => skill.trim()),
       },
     ]);
