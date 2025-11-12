@@ -22,7 +22,6 @@ function App() {
     department: "",
     skills: "",
   });
-
   const handleClick = (employees) => {
     setEmployees([
       ...employees,
