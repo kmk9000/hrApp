@@ -9,6 +9,9 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
     e.preventDefault();
     const employeeData = {
       ...formData,
+      animal:
+        formData.animal.charAt(0).toUpperCase() +
+        formData.animal.slice(1).toLowerCase(),
       skills: formData.skills.split(",").map((skill) => skill.trim()),
     };
     handleClick(employeeData);
@@ -80,6 +83,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         <input
           id="email"
           name="email"
+          type="email"
           value={formData.email}
           onChange={handleChange}
         />

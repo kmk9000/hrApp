@@ -43,7 +43,7 @@ function App() {
         location: formData.location,
         department: formData.department,
         skills: formData.skills
-          ? formData.skills.split(",").map((skill) => skill.trim())
+          ? formData.skills.split(", ").map((skill) => skill.trim())
           : [],
         isFavourite: false,
       })
