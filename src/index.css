@@ -89,6 +89,10 @@ main {
   box-shadow: 6px 6px 5px darkslategray;
 }
 
+.card h2 {
+  text-align: center;
+}
+
 .card-header {
   text-align: center;
   margin-bottom: 1em;
@@ -109,11 +113,14 @@ form {
 
 form label {
   display: block;
+  padding-left: 6px;
 }
 
 form input {
   width: 100%;
+  box-sizing: border-box;
 }
+
 button {
   margin: 1em;
   padding: 0.5em 1em;
