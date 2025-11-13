@@ -16,14 +16,16 @@ export default function PersonCard({
     new Date().getFullYear() - new Date(startDate).getFullYear();
   return (
     <div className="card">
-      <h2>{name}</h2>
-      <div style={{ color: "red" }}>
-        {yearsEmployed < 0.5 ? "🔔 Schedule probation review." : ""}
-      </div>
-      <div style={{ color: "green" }}>
-        {yearsEmployed == 5 ? "🎉 Schedule recognition meeting." : ""}
-        {yearsEmployed == 10 ? "🎉 Schedule recognition meeting." : ""}
-        {yearsEmployed == 15 ? "🎉 Schedule recognition meeting." : ""}
+      <div className="card-header">
+        <h2>{name}</h2>
+        <div className="notice-card" style={{ color: "red" }}>
+          {yearsEmployed < 0.5 && <p>🔔 Schedule probation review.</p>}
+        </div>
+        <div className="notice-card" style={{ color: "green" }}>
+          {yearsEmployed == 5 && <p>🎉 Schedule recognition meeting. </p>}
+          {yearsEmployed == 10 && <p>🎉 Schedule recognition meeting. </p>}
+          {yearsEmployed == 15 && <p>🎉 Schedule recognition meeting. </p>}
+        </div>
       </div>
       <p>Title: {title}</p>
       <p>Salary: {salary}</p>
@@ -31,7 +33,7 @@ export default function PersonCard({
       <p>Email: {email}</p>
       <p>
         Favorite animal:
-        {animalEmojis[animal] ?? " Unknown"}
+        {animalEmojis[animal] ?? "❓"}
       </p>
       <p>Start date: {startDate}</p>
       <p>Years employed: {yearsEmployed}</p>

@@ -278,6 +278,40 @@
         "Aut culpa elit in v"
       ],
       "isFavourite": false
+    },
+    {
+      "id": "10ec",
+      "name": "Seahorse Man",
+      "title": "Master of the Sea",
+      "salary": "10000000",
+      "phone": "+1 (333) 431-3845",
+      "email": "jymucidub@mailinator.com",
+      "animal": "seahorse",
+      "startDate": "2222-22-22",
+      "location": "The Ocean",
+      "department": "HR",
+      "skills": [
+        "seahorse",
+        "seahorse",
+        "seahorse"
+      ],
+      "isFavourite": false
+    },
+    {
+      "id": "c110",
+      "name": "Arden Larson",
+      "title": "Voluptatibus consect",
+      "salary": "71",
+      "phone": "+1 (503) 838-9639",
+      "email": "doraba@mailinator.com",
+      "animal": "hyena",
+      "startDate": "2003-11-11",
+      "location": "Et quis nisi adipisi",
+      "department": "Veritatis tenetur ex",
+      "skills": [
+        "Reprehenderit corru"
+      ],
+      "isFavourite": false
     }
   ]
 }
