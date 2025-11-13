@@ -216,50 +216,6 @@
       ]
     },
     {
-      "id": "9dbc",
-      "name": "Samantha Fisher",
-      "title": "Spy",
-      "salary": "5555",
-      "phone": "+1 (603) 996-7052",
-      "email": "vasugym@mailinator.com",
-      "animal": "cat",
-      "isFavourite": false
-    },
-    {
-      "id": "cbaa",
-      "name": "Lawrence Ford",
-      "title": "Et adipisicing sint ",
-      "salary": "2",
-      "phone": "+1 (421) 904-2584",
-      "email": "vegulaxigu@mailinator.com",
-      "animal": "Nesciunt tempore e",
-      "startDate": "1984-04-20",
-      "location": "Incididunt tempora i",
-      "department": "Dolores voluptas cil",
-      "skills": [
-        "Deserunt",
-        "neque",
-        "bland"
-      ],
-      "isFavourite": false
-    },
-    {
-      "id": "601b",
-      "name": "Colton Velazquez",
-      "title": "Cumque eveniet vita",
-      "salary": "39",
-      "phone": "+1 (829) 101-5711",
-      "email": "tumu@mailinator.com",
-      "animal": "Cat",
-      "startDate": "1982-08-11",
-      "location": "Qui odit similique e",
-      "department": "Ipsum fugiat amet ",
-      "skills": [
-        "Quam odit earum occa"
-      ],
-      "isFavourite": false
-    },
-    {
       "id": "a64f",
       "name": "Dawn Burgess",
       "title": "Maiores et in aspern",
@@ -272,6 +228,54 @@
       "department": "Reprehenderit minim",
       "skills": [
         "Non cillum porro qua"
+      ],
+      "isFavourite": false
+    },
+    {
+      "id": "b1af",
+      "name": "Naida James",
+      "title": "Illo odit lorem temp",
+      "salary": "39",
+      "phone": "+1 (683) 458-8659",
+      "email": "xuwyryzoda@mailinator.com",
+      "animal": "",
+      "startDate": "2025-02-28",
+      "location": "Sed rem ex quaerat e",
+      "department": "Porro ut quia in dol",
+      "skills": [
+        "Minim aute quidem na"
+      ],
+      "isFavourite": false
+    },
+    {
+      "id": "0819",
+      "name": "Elaine May",
+      "title": "Voluptas tempora id ",
+      "salary": "10",
+      "phone": "+1 (478) 826-6613",
+      "email": "wyzehate@mailinator.com",
+      "animal": "",
+      "startDate": "2024-10-03",
+      "location": "Quis possimus quaer",
+      "department": "Quibusdam asperiores",
+      "skills": [
+        "Voluptatum quis aut"
+      ],
+      "isFavourite": false
+    },
+    {
+      "id": "10a8",
+      "name": "Hayes Morin",
+      "title": "Est voluptas qui err",
+      "salary": "5",
+      "phone": "+1 (159) 706-3943",
+      "email": "qeteci@mailinator.com",
+      "animal": "",
+      "startDate": "2025-01-07",
+      "location": "Dolores eveniet dol",
+      "department": "Maxime facere quaera",
+      "skills": [
+        "Aut culpa elit in v"
       ],
       "isFavourite": false
     }

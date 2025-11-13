@@ -30,8 +30,8 @@ export default function PersonCard({
       <p>Phone: {phone}</p>
       <p>Email: {email}</p>
       <p>
-        Animal:
-        {animalEmojis[animal]}
+        Favorite animal:
+        {animalEmojis[animal] ?? " Unknown"}
       </p>
       <p>Start date: {startDate}</p>
       <p>Years employed: {yearsEmployed}</p>
@@ -39,7 +39,7 @@ export default function PersonCard({
       <p>Department: {department}</p>
       <p>Skills: {(skills ?? []).join(", ")}</p>
       {/* ?? nullish coalescing operator, if first condition is undefined, it will do the second
-      this was an issue because using a method like join broke the site when skills as undefined
+      this was an issue because using a method like join broke the site when skills was undefined
       REMEMBER THIS*/}
     </div>
   );
