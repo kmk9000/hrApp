@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PersonList from "./components/PersonList";
 import AddEmployee from "./components/AddEmployee";
-// import db from "./assets/db.json";
 import About from "./components/About";
 
 function App() {
