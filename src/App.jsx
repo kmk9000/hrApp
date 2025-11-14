@@ -33,15 +33,7 @@ function App() {
   const handleClick = () => {
     axios
       .post("http://localhost:3001/employees", {
-        name: formData.name,
-        title: formData.title,
-        salary: formData.salary,
-        phone: formData.phone,
-        email: formData.email,
-        animal: formData.animal,
-        startDate: formData.startDate,
-        location: formData.location,
-        department: formData.department,
+        ...formData,
         skills: formData.skills
           ? formData.skills.split(", ").map((skill) => skill.trim())
           : [],

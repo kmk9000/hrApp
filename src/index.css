@@ -82,7 +82,7 @@ main {
 
 .card {
   background-color: whitesmoke;
-  padding: 0.5em 2em;
+  padding: 0.5em 1.5em;
   border: solid 2px black;
   border-radius: 8px;
   width: 300px;
