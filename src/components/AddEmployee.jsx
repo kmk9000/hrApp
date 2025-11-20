@@ -125,6 +125,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         <input
           id="skills"
           name="skills"
+          placeholder="Please separate skills with a comma"
           value={formData.skills}
           onChange={handleChange}
         />

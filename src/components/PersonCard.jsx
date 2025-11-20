@@ -43,7 +43,7 @@ export default function PersonCard({
     update(`http://localhost:3001/employees/${id}`, person);
   };
 
-  const renderEditForm = (value, name) => {
+  const renderEditForm = (value, field) => {
     const capitalizeWords = (text) =>
       text
         .toString()
@@ -52,10 +52,14 @@ export default function PersonCard({
           (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
         );
     const displayValue = value ? capitalizeWords(value) : "N/A";
-    const displayName = name ? capitalizeWords(name) : "N/A";
+    const displayName = field ? capitalizeWords(field) : "N/A";
 
     return isEditing ? (
-      <input value={value || ""} name={name} onChange={handleInputChange} />
+      <input
+        value={value || ""}
+        name={field.toLowerCase()}
+        onChange={handleInputChange}
+      />
     ) : (
       <p>
         {displayName}: {displayValue}

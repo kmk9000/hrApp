@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Aino Virtanen",
       "title": "HR Manager",
-      "salary": "5002",
+      "salary": "5000",
       "phone": "040-1234567",
       "email": "aino.virtanen@example.com",
       "animal": "owl",
@@ -246,6 +246,22 @@
         "seahorse",
         "seahorse",
         "seahorse"
+      ],
+      "isFavourite": false
+    },
+    {
+      "id": "502b",
+      "name": "Scott Rowland",
+      "title": "Laborum Non volupta",
+      "salary": "98",
+      "phone": "+1 (284) 514-6957",
+      "email": "mocug@mailinator.com",
+      "animal": "Perferendis sed et o",
+      "startDate": "1977-01-29",
+      "location": "Sed error molestiae ",
+      "department": "Eius ducimus expedi",
+      "skills": [
+        "Qui dolorem rerum nu"
       ],
       "isFavourite": false
     }
