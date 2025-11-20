@@ -106,7 +106,16 @@ export default function PersonCard({
       >
         {isEditing ? "Save" : "Edit"}
       </button>
-      {isEditing && <button>Cancel</button>}
+      {isEditing && (
+        <button
+          onClick={() => {
+            if (isEditing) handleEdit();
+            setIsEditing((prev) => !prev);
+          }}
+        >
+          Cancel
+        </button>
+      )}
     </div>
   );
 }
