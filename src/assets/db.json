@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Aino Virtanen",
       "title": "HR Manager",
-      "salary": 4200,
+      "salary": "5000",
       "phone": "040-1234567",
       "email": "aino.virtanen@example.com",
       "animal": "owl",
@@ -15,7 +15,8 @@
         "Recruiting",
         "Communication",
         "Employee Relations"
-      ]
+      ],
+      "Aino Virtanen": "420"
     },
     {
       "id": "2",

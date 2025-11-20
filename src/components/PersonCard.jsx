@@ -53,7 +53,11 @@ export default function PersonCard({
     const displayValue = value ? capitalizeWords(value) : "N/A";
 
     return isEditing ? (
-      <input value={value || ""} name={name} onChange={handleInputChange} />
+      <input
+        value={value || ""}
+        name={field.toLowerCase()}
+        onChange={handleInputChange}
+      />
     ) : (
       <p>
         {field}: {displayValue}
@@ -102,6 +106,7 @@ export default function PersonCard({
       >
         {isEditing ? "Save" : "Edit"}
       </button>
+      {isEditing && <button>Cancel</button>}
     </div>
   );
 }
