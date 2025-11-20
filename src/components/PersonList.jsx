@@ -8,8 +8,12 @@ import PersonCard from "./PersonCard";
 //   ));
 // }
 
-export default function PersonList({ employees }) {
+export default function PersonList({ employees, onDelete }) {
   return employees.map((employee) => (
-    <PersonCard key={employee.id} {...employee} />
+    <PersonCard
+      key={employee.id}
+      {...employee}
+      handleDeleteEmployee={onDelete}
+    />
   ));
 }

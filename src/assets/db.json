@@ -216,22 +216,6 @@
       ]
     },
     {
-      "id": "a64f",
-      "name": "Dawn Burgess",
-      "title": "Maiores et in aspern",
-      "salary": "59",
-      "phone": "+1 (936) 923-7192",
-      "email": "nybaco@mailinator.com",
-      "animal": "cat",
-      "startDate": "1975-10-23",
-      "location": "Ea distinctio Ratio",
-      "department": "Reprehenderit minim",
-      "skills": [
-        "Non cillum porro qua"
-      ],
-      "isFavourite": false
-    },
-    {
       "id": "b1af",
       "name": "Naida James",
       "title": "Illo odit lorem temp",
@@ -244,38 +228,6 @@
       "department": "Porro ut quia in dol",
       "skills": [
         "Minim aute quidem na"
-      ],
-      "isFavourite": false
-    },
-    {
-      "id": "0819",
-      "name": "Elaine May",
-      "title": "Voluptas tempora id ",
-      "salary": "10",
-      "phone": "+1 (478) 826-6613",
-      "email": "wyzehate@mailinator.com",
-      "animal": "",
-      "startDate": "2024-10-03",
-      "location": "Quis possimus quaer",
-      "department": "Quibusdam asperiores",
-      "skills": [
-        "Voluptatum quis aut"
-      ],
-      "isFavourite": false
-    },
-    {
-      "id": "10a8",
-      "name": "Hayes Morin",
-      "title": "Est voluptas qui err",
-      "salary": "5",
-      "phone": "+1 (159) 706-3943",
-      "email": "qeteci@mailinator.com",
-      "animal": "",
-      "startDate": "2025-01-07",
-      "location": "Dolores eveniet dol",
-      "department": "Maxime facere quaera",
-      "skills": [
-        "Aut culpa elit in v"
       ],
       "isFavourite": false
     },
@@ -294,38 +246,6 @@
         "seahorse",
         "seahorse",
         "seahorse"
-      ],
-      "isFavourite": false
-    },
-    {
-      "id": "c110",
-      "name": "Arden Larson",
-      "title": "Voluptatibus consect",
-      "salary": "71",
-      "phone": "+1 (503) 838-9639",
-      "email": "doraba@mailinator.com",
-      "animal": "hyena",
-      "startDate": "2003-11-11",
-      "location": "Et quis nisi adipisi",
-      "department": "Veritatis tenetur ex",
-      "skills": [
-        "Reprehenderit corru"
-      ],
-      "isFavourite": false
-    },
-    {
-      "id": "176c",
-      "name": "Ursa Alston",
-      "title": "Deserunt voluptatibu",
-      "salary": "85",
-      "phone": "+1 (135) 874-7486",
-      "email": "xafyq@mailinator.com",
-      "animal": "Quas veritatis qui s",
-      "startDate": "1979-04-24",
-      "location": "Blanditiis aut ut ut",
-      "department": "Libero id qui odit ",
-      "skills": [
-        "Commodi voluptatem"
       ],
       "isFavourite": false
     }

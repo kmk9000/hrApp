@@ -43,13 +43,29 @@ function App() {
       });
   };
 
+  const handleDeleteEmployee = (id) => {
+    axios.delete(`http://localhost:3001/employees/${id}`).then((response) => {
+      setEmployees((prevEmployees) =>
+        prevEmployees.filter((employee) => employee.id !== id)
+      );
+    });
+  };
+
   return (
     <Router>
       <div className="container">
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<PersonList employees={employees} />} />
+            <Route
+              path="/"
+              element={
+                <PersonList
+                  employees={employees}
+                  onDelete={handleDeleteEmployee}
+                />
+              }
+            />
             <Route path="/about" element={<About />} />
             <Route
               path="/add-employee"

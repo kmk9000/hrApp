@@ -14,6 +14,7 @@ export default function PersonCard({
   department,
   skills,
   id,
+  handleDeleteEmployee,
 }) {
   const yearsEmployed =
     new Date().getFullYear() - new Date(startDate).getFullYear();
@@ -42,7 +43,7 @@ export default function PersonCard({
     update(`http://localhost:3001/employees/${id}`, person);
   };
 
-  const renderEditForm = (value, field) => {
+  const renderEditForm = (value, name) => {
     const capitalizeWords = (text) =>
       text
         .toString()
@@ -51,16 +52,13 @@ export default function PersonCard({
           (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
         );
     const displayValue = value ? capitalizeWords(value) : "N/A";
+    const displayName = name ? capitalizeWords(name) : "N/A";
 
     return isEditing ? (
-      <input
-        value={value || ""}
-        name={field.toLowerCase()}
-        onChange={handleInputChange}
-      />
+      <input value={value || ""} name={name} onChange={handleInputChange} />
     ) : (
       <p>
-        {field}: {displayValue}
+        {displayName}: {displayValue}
       </p>
     );
   };
@@ -116,6 +114,7 @@ export default function PersonCard({
           Cancel
         </button>
       )}
+      <button onClick={() => handleDeleteEmployee(id)}>Delete</button>
     </div>
   );
 }
