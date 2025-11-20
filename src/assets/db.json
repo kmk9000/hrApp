@@ -11,7 +11,11 @@
       "startDate": "2025-04-01",
       "location": "Helsinki",
       "department": "Human Resources",
-      "skills": ["Recruiting", "Communication", "Employee Relations"]
+      "skills": [
+        "Recruiting",
+        "Communication",
+        "Employee Relations"
+      ]
     },
     {
       "id": "2",
@@ -24,7 +28,12 @@
       "startDate": "2010-08-15",
       "location": "Espoo",
       "department": "Engineering",
-      "skills": ["JavaScript", "React", "Node.js", "TypeScript"]
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "TypeScript"
+      ]
     },
     {
       "id": "3",
@@ -37,7 +46,12 @@
       "startDate": "2019-11-03",
       "location": "Helsinki",
       "department": "Marketing",
-      "skills": ["Social Media", "Content Creation", "SEO", "Analytics"]
+      "skills": [
+        "Social Media",
+        "Content Creation",
+        "SEO",
+        "Analytics"
+      ]
     },
     {
       "id": "4",
@@ -50,7 +64,12 @@
       "startDate": "2017-06-20",
       "location": "Tampere",
       "department": "Sales",
-      "skills": ["Negotiation", "CRM", "Client Management", "Strategy"]
+      "skills": [
+        "Negotiation",
+        "CRM",
+        "Client Management",
+        "Strategy"
+      ]
     },
     {
       "id": "5",
@@ -63,7 +82,12 @@
       "startDate": "2021-01-10",
       "location": "Helsinki",
       "department": "Design",
-      "skills": ["Figma", "User Research", "Prototyping", "UI Design"]
+      "skills": [
+        "Figma",
+        "User Research",
+        "Prototyping",
+        "UI Design"
+      ]
     },
     {
       "id": "6",
@@ -76,7 +100,12 @@
       "startDate": "2019-03-25",
       "location": "Espoo",
       "department": "Data Science",
-      "skills": ["Python", "Machine Learning", "SQL", "Statistics"]
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "SQL",
+        "Statistics"
+      ]
     },
     {
       "id": "7",
@@ -89,7 +118,12 @@
       "startDate": "2018-09-12",
       "location": "Helsinki",
       "department": "Finance",
-      "skills": ["Excel", "Financial Modeling", "Budgeting", "Reporting"]
+      "skills": [
+        "Excel",
+        "Financial Modeling",
+        "Budgeting",
+        "Reporting"
+      ]
     },
     {
       "id": "8",
@@ -102,7 +136,12 @@
       "startDate": "2020-05-18",
       "location": "Remote",
       "department": "Engineering",
-      "skills": ["AWS", "Docker", "Kubernetes", "CI/CD"]
+      "skills": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "CI/CD"
+      ]
     },
     {
       "id": "9",
@@ -133,7 +172,12 @@
       "startDate": "2022-07-30",
       "location": "Espoo",
       "department": "Quality Assurance",
-      "skills": ["Test Automation", "Selenium", "Jest", "Manual Testing"]
+      "skills": [
+        "Test Automation",
+        "Selenium",
+        "Jest",
+        "Manual Testing"
+      ]
     },
     {
       "id": "11",
@@ -182,7 +226,9 @@
       "startDate": "1975-10-23",
       "location": "Ea distinctio Ratio",
       "department": "Reprehenderit minim",
-      "skills": ["Non cillum porro qua"],
+      "skills": [
+        "Non cillum porro qua"
+      ],
       "isFavourite": false
     },
     {
@@ -196,7 +242,9 @@
       "startDate": "2025-02-28",
       "location": "Sed rem ex quaerat e",
       "department": "Porro ut quia in dol",
-      "skills": ["Minim aute quidem na"],
+      "skills": [
+        "Minim aute quidem na"
+      ],
       "isFavourite": false
     },
     {
@@ -210,7 +258,9 @@
       "startDate": "2024-10-03",
       "location": "Quis possimus quaer",
       "department": "Quibusdam asperiores",
-      "skills": ["Voluptatum quis aut"],
+      "skills": [
+        "Voluptatum quis aut"
+      ],
       "isFavourite": false
     },
     {
@@ -224,7 +274,9 @@
       "startDate": "2025-01-07",
       "location": "Dolores eveniet dol",
       "department": "Maxime facere quaera",
-      "skills": ["Aut culpa elit in v"],
+      "skills": [
+        "Aut culpa elit in v"
+      ],
       "isFavourite": false
     },
     {
@@ -238,7 +290,11 @@
       "startDate": "2222-22-22",
       "location": "The Ocean",
       "department": "HR",
-      "skills": ["seahorse", "seahorse", "seahorse"],
+      "skills": [
+        "seahorse",
+        "seahorse",
+        "seahorse"
+      ],
       "isFavourite": false
     },
     {
@@ -252,7 +308,9 @@
       "startDate": "2003-11-11",
       "location": "Et quis nisi adipisi",
       "department": "Veritatis tenetur ex",
-      "skills": ["Reprehenderit corru"],
+      "skills": [
+        "Reprehenderit corru"
+      ],
       "isFavourite": false
     },
     {
@@ -266,7 +324,9 @@
       "startDate": "1979-04-24",
       "location": "Blanditiis aut ut ut",
       "department": "Libero id qui odit ",
-      "skills": ["Commodi voluptatem"],
+      "skills": [
+        "Commodi voluptatem"
+      ],
       "isFavourite": false
     }
   ]
