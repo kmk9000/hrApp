@@ -98,6 +98,10 @@ main {
   margin-bottom: 1em;
 }
 
+.editable-card input {
+  margin: 0;
+}
+
 #about-card {
   width: 600px;
 }

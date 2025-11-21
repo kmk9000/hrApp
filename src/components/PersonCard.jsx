@@ -51,15 +51,22 @@ export default function PersonCard({
           /\w\S*/g,
           (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
         );
-    const displayValue = value ? capitalizeWords(value) : "N/A";
+    const displayValue = value
+      ? Array.isArray(value)
+        ? value.join(", ")
+        : capitalizeWords(value)
+      : "N/A";
     const displayName = field ? capitalizeWords(field) : "N/A";
 
     return isEditing ? (
-      <input
-        value={value || ""}
-        name={field.toLowerCase()}
-        onChange={handleInputChange}
-      />
+      <p>
+        {displayName}:
+        <input
+          value={value || ""}
+          name={field.toLowerCase()}
+          onChange={handleInputChange}
+        />
+      </p>
     ) : (
       <p>
         {displayName}: {displayValue}
@@ -75,9 +82,9 @@ export default function PersonCard({
           {yearsEmployed < 0.5 && <p>🔔 Schedule probation review.</p>}
         </div>
         <div className="notice-card" style={{ color: "green" }}>
-          {yearsEmployed == 5 && <p>🎉 Schedule recognition meeting. </p>}
-          {yearsEmployed == 10 && <p>🎉 Schedule recognition meeting. </p>}
-          {yearsEmployed == 15 && <p>🎉 Schedule recognition meeting. </p>}
+          {yearsEmployed === 5 && <p>🎉 Schedule recognition meeting. </p>}
+          {yearsEmployed === 10 && <p>🎉 Schedule recognition meeting. </p>}
+          {yearsEmployed === 15 && <p>🎉 Schedule recognition meeting. </p>}
         </div>
       </div>
       <p>Title: {title}</p>
@@ -89,10 +96,12 @@ export default function PersonCard({
       </p>
       <p>Start date: {startDate}</p>
       <p>Years employed: {yearsEmployed}</p>
-      {renderEditForm(person.salary, "Salary")}
-      {renderEditForm(person.location, "Location")}
-      {renderEditForm(person.department, "Department")}
-      {renderEditForm(person.skills, "Skills")}
+      <div className="editable-card">
+        {renderEditForm(person.salary, "Salary")}
+        {renderEditForm(person.location, "Location")}
+        {renderEditForm(person.department, "Department")}
+        {renderEditForm(person.skills, "Skills")}
+      </div>
       {/* <p>Salary: {salary}</p>
       <p>Location: {location}</p>
       <p>Department: {department}</p>
@@ -118,7 +127,15 @@ export default function PersonCard({
           Cancel
         </button>
       )}
-      <button onClick={() => handleDeleteEmployee(id)}>Delete</button>
+      <button
+        onClick={() => {
+          if (window.confirm(`Are you sure you want to delete ${name}`)) {
+            handleDeleteEmployee(id);
+          }
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
 }

@@ -216,22 +216,6 @@
       ]
     },
     {
-      "id": "b1af",
-      "name": "Naida James",
-      "title": "Illo odit lorem temp",
-      "salary": "39",
-      "phone": "+1 (683) 458-8659",
-      "email": "xuwyryzoda@mailinator.com",
-      "animal": "",
-      "startDate": "2025-02-28",
-      "location": "Sed rem ex quaerat e",
-      "department": "Porro ut quia in dol",
-      "skills": [
-        "Minim aute quidem na"
-      ],
-      "isFavourite": false
-    },
-    {
       "id": "10ec",
       "name": "Seahorse Man",
       "title": "Master of the Sea",
@@ -246,22 +230,6 @@
         "seahorse",
         "seahorse",
         "seahorse"
-      ],
-      "isFavourite": false
-    },
-    {
-      "id": "502b",
-      "name": "Scott Rowland",
-      "title": "Laborum Non volupta",
-      "salary": "98",
-      "phone": "+1 (284) 514-6957",
-      "email": "mocug@mailinator.com",
-      "animal": "Perferendis sed et o",
-      "startDate": "1977-01-29",
-      "location": "Sed error molestiae ",
-      "department": "Eius ducimus expedi",
-      "skills": [
-        "Qui dolorem rerum nu"
       ],
       "isFavourite": false
     }
