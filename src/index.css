@@ -10,12 +10,60 @@ body {
 
 header {
   flex: 1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   border: solid 2px black;
   border-radius: 8px;
-  padding: 0 1em 0 1em;
+  padding: 0 1em;
   margin: 0.5em 1em 0.5em 1em;
   background-color: lightseagreen;
   box-shadow: 6px 6px 5px darkslategray;
+  min-height: 88px;
+}
+
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 1em;
+  }
+}
+
+header h1 {
+  margin: 0.5em 0 0.5em 1em;
+  /* margin-left: 16px; */
+}
+
+nav {
+  display: flex;
+  gap: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  background-color: whitesmoke;
+  border: solid 2px black;
+  border-radius: 8px;
+  padding: 0.2em 0.5em;
+  text-align: center;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+a:hover {
+  scale: 1.2;
+}
+
+input {
+  margin: 0.5em;
 }
 
 main {
@@ -25,7 +73,7 @@ main {
   border: solid 2px black;
   border-radius: 8px;
   margin: 0.5em 1em 0.5em 1em;
-  padding: 3em;
+  padding: 3em 1em;
   background-color: lightseagreen;
   box-shadow: 6px 6px 5px darkslategray;
   justify-content: center;
@@ -34,19 +82,80 @@ main {
 
 .card {
   background-color: whitesmoke;
-  padding: 0.5em 2em;
+  padding: 0.5em 1.5em;
   border: solid 2px black;
   border-radius: 8px;
   width: 300px;
   box-shadow: 6px 6px 5px darkslategray;
 }
 
+.card h2 {
+  text-align: center;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.editable-card input {
+  margin: 0;
+}
+
+#about-card {
+  width: 600px;
+}
+
+#about-card p {
+  text-align: justify;
+}
+
+form {
+  max-width: 600px;
+  padding: 0 2rem;
+}
+
+form label {
+  display: block;
+  padding-left: 6px;
+}
+
+form input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  margin: 1em;
+  padding: 0.5em 1em;
+}
+
 footer {
   flex: 1;
+  flex-direction: row;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: center;
+  position: relative;
   border: solid 2px black;
   border-radius: 8px;
   margin: 0.5em 1em 0.5em 1em;
   background-color: lightseagreen;
   text-align: center;
   box-shadow: 6px 6px 5px darkslategray;
+  min-height: 88px;
+}
+
+footer button.scroll-to-top {
+  position: absolute;
+  right: 1em;
+  background-color: whitesmoke;
+  border: solid 2px black;
+  border-radius: 8px;
+  padding: 0.2em 0.5em;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
 }
