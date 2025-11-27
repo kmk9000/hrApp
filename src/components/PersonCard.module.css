@@ -19,3 +19,16 @@
 .editableCard input {
   margin: 0;
 }
+
+.noticeCardRed {
+  color: red;
+}
+
+.noticeCardGreen {
+  color: green;
+}
+
+.noticeCard {
+  text-align: center;
+  margin-top: 0.5em;
+}

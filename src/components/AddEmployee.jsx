@@ -1,3 +1,5 @@
+import styles from "./AddEmployee.module.css";
+
 export default function AddEmployee({ formData, setFormData, handleClick }) {
   const handleChange = (e) => {
     setFormData((prevState) => {
@@ -32,9 +34,9 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
   };
 
   return (
-    <div className="card">
+    <div className={styles.card}>
       <h2>Add Employee</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         {/* {Object.keys(formData).map((key) => (
           <div key={key}>
             <label htmlFor={key}>{key}</label>

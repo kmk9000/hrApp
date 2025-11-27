@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
 
 export default function Header() {
   return (
-    <header>
+    <header className={styles.header}>
       <h1>hrApp</h1>
       <nav>
         <Link to="/">Persons</Link>

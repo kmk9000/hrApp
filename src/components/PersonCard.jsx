@@ -79,10 +79,10 @@ export default function PersonCard({
     <div className={styles.card}>
       <div className={styles.cardHeader}>
         <h2>{name}</h2>
-        <div className="notice-card" style={{ color: "red" }}>
+        <div className={styles.noticeCardRed}>
           {yearsEmployed < 0.5 && <p>🔔 Schedule probation review.</p>}
         </div>
-        <div className="notice-card" style={{ color: "green" }}>
+        <div className={styles.noticeCardGreen}>
           {yearsEmployed === 5 && <p>🎉 Schedule recognition meeting. </p>}
           {yearsEmployed === 10 && <p>🎉 Schedule recognition meeting. </p>}
           {yearsEmployed === 15 && <p>🎉 Schedule recognition meeting. </p>}

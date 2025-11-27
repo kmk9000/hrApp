@@ -1,0 +1,28 @@
+form {
+  max-width: 600px;
+  padding: 0 2rem;
+}
+
+form label {
+  display: block;
+  padding-left: 6px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.5em;
+}
+
+.card {
+  background-color: whitesmoke;
+  padding: 0.5em 1.5em;
+  border: solid 2px black;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 6px 6px 5px darkslategray;
+}
+
+.card h2 {
+  text-align: center;
+}
