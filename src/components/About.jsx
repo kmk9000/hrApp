@@ -1,6 +1,8 @@
+import styles from "./About.module.css";
+
 export default function About() {
   return (
-    <div className="card" id="about-card">
+    <div className={styles.aboutCard}>
       <h2>About hrApp</h2>
       <p>
         This is a simple HR management application for tracking employees. What

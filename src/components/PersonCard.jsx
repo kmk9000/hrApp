@@ -1,6 +1,7 @@
 import animalEmojis from "../assets/animalEmojis.json";
 import { useState } from "react";
-import axios from "axios";
+import useAxios from "../hooks/useAxios";
+import styles from "./PersonCard.module.css";
 
 export default function PersonCard({
   name,
@@ -18,7 +19,7 @@ export default function PersonCard({
 }) {
   const yearsEmployed =
     new Date().getFullYear() - new Date(startDate).getFullYear();
-
+  const { patch, BASE_URL } = useAxios();
   const [isEditing, setIsEditing] = useState(false);
   const [person, setPerson] = useState({
     salary,
@@ -27,8 +28,8 @@ export default function PersonCard({
     skills,
   });
 
-  const update = (url = "http://localhost:3001", body = {}, headers = {}) => {
-    axios.patch(url, body, { headers });
+  const update = (url = BASE_URL, body = {}, headers = {}) => {
+    patch(url, body, { headers });
   };
 
   const handleInputChange = (e) => {
@@ -40,7 +41,7 @@ export default function PersonCard({
   };
 
   const handleEdit = () => {
-    update(`http://localhost:3001/employees/${id}`, person);
+    update(`${BASE_URL}/${id}`, person);
   };
 
   const renderEditForm = (value, field) => {
@@ -75,13 +76,13 @@ export default function PersonCard({
   };
 
   return (
-    <div className="card">
-      <div className="card-header">
+    <div className={styles.card}>
+      <div className={styles.cardHeader}>
         <h2>{name}</h2>
-        <div className="notice-card" style={{ color: "red" }}>
+        <div className={styles.noticeCardRed}>
           {yearsEmployed < 0.5 && <p>🔔 Schedule probation review.</p>}
         </div>
-        <div className="notice-card" style={{ color: "green" }}>
+        <div className={styles.noticeCardGreen}>
           {yearsEmployed === 5 && <p>🎉 Schedule recognition meeting. </p>}
           {yearsEmployed === 10 && <p>🎉 Schedule recognition meeting. </p>}
           {yearsEmployed === 15 && <p>🎉 Schedule recognition meeting. </p>}
@@ -96,7 +97,7 @@ export default function PersonCard({
       </p>
       <p>Start date: {startDate}</p>
       <p>Years employed: {yearsEmployed}</p>
-      <div className="editable-card">
+      <div className={styles.editableCard}>
         {renderEditForm(person.salary, "Salary")}
         {renderEditForm(person.location, "Location")}
         {renderEditForm(person.department, "Department")}
