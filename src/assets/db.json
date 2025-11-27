@@ -232,6 +232,24 @@
         "seahorse"
       ],
       "isFavourite": false
+    },
+    {
+      "id": "c32c",
+      "name": "Tanisha Workman",
+      "title": "Porro ea ex fuga So",
+      "salary": "23",
+      "phone": "+1 (698) 863-2406",
+      "email": "higyliv@mailinator.com",
+      "animal": "cat",
+      "startDate": "1986-08-17",
+      "location": "Molestiae doloremque",
+      "department": "Ut sit qui saepe lab",
+      "skills": [
+        "Voluptas",
+        "velit",
+        "dolor"
+      ],
+      "isFavourite": false
     }
   ]
 }

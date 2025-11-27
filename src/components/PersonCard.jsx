@@ -1,6 +1,6 @@
 import animalEmojis from "../assets/animalEmojis.json";
 import { useState } from "react";
-import axios from "axios";
+import useAxios from "../hooks/useAxios";
 
 export default function PersonCard({
   name,
@@ -18,7 +18,7 @@ export default function PersonCard({
 }) {
   const yearsEmployed =
     new Date().getFullYear() - new Date(startDate).getFullYear();
-
+  const { patch } = useAxios();
   const [isEditing, setIsEditing] = useState(false);
   const [person, setPerson] = useState({
     salary,
@@ -28,7 +28,7 @@ export default function PersonCard({
   });
 
   const update = (url = "http://localhost:3001", body = {}, headers = {}) => {
-    axios.patch(url, body, { headers });
+    patch(url, body, { headers });
   };
 
   const handleInputChange = (e) => {
