@@ -10,6 +10,8 @@ import About from "./components/About";
 
 function App() {
   const { get, post, del, BASE_URL } = useAxios();
+  const [loading, setLoading] = useState(true);
+
   const [employees, setEmployees] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -25,9 +27,16 @@ function App() {
   });
 
   useEffect(() => {
-    get(BASE_URL).then((response) => {
-      setEmployees(response.data);
-    });
+    get(BASE_URL)
+      .then((response) => {
+        setEmployees(response.data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   const handleClick = () => {
@@ -50,8 +59,12 @@ function App() {
     });
   };
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <Router>
+    <Router basename="/hrApp">
       <div className="container">
         <Header />
         <main>
