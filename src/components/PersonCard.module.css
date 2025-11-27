@@ -32,3 +32,25 @@
   text-align: center;
   margin-top: 0.5em;
 }
+
+button {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  background-color: whitesmoke;
+  border: solid 2px black;
+  border-radius: 8px;
+  padding: 0.2em 0.5em;
+  text-align: center;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+button:hover {
+  scale: 1.2;
+}
