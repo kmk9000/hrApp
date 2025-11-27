@@ -18,7 +18,7 @@ export default function PersonCard({
 }) {
   const yearsEmployed =
     new Date().getFullYear() - new Date(startDate).getFullYear();
-  const { patch } = useAxios();
+  const { patch, BASE_URL } = useAxios();
   const [isEditing, setIsEditing] = useState(false);
   const [person, setPerson] = useState({
     salary,
@@ -27,7 +27,7 @@ export default function PersonCard({
     skills,
   });
 
-  const update = (url = "http://localhost:3001", body = {}, headers = {}) => {
+  const update = (url = BASE_URL, body = {}, headers = {}) => {
     patch(url, body, { headers });
   };
 
@@ -40,7 +40,7 @@ export default function PersonCard({
   };
 
   const handleEdit = () => {
-    update(`http://localhost:3001/employees/${id}`, person);
+    update(`${BASE_URL}/${id}`, person);
   };
 
   const renderEditForm = (value, field) => {
