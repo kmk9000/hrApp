@@ -80,7 +80,7 @@ main {
   gap: 3em;
 }
 
-.card {
+/* .card {
   background-color: whitesmoke;
   padding: 0.5em 1.5em;
   border: solid 2px black;
@@ -91,16 +91,16 @@ main {
 
 .card h2 {
   text-align: center;
-}
+} */
 
-.card-header {
+/* .card-header {
   text-align: center;
   margin-bottom: 1em;
-}
+} */
 
-.editable-card input {
+/* .editable-card input {
   margin: 0;
-}
+} */
 
 #about-card {
   width: 600px;

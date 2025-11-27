@@ -1,0 +1,21 @@
+.card {
+  background-color: whitesmoke;
+  padding: 0.5em 1.5em;
+  border: solid 2px black;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 6px 6px 5px darkslategray;
+}
+
+.card h2 {
+  text-align: center;
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.editableCard input {
+  margin: 0;
+}

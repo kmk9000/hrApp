@@ -1,6 +1,7 @@
 import animalEmojis from "../assets/animalEmojis.json";
 import { useState } from "react";
 import useAxios from "../hooks/useAxios";
+import styles from "./PersonCard.module.css";
 
 export default function PersonCard({
   name,
@@ -75,8 +76,8 @@ export default function PersonCard({
   };
 
   return (
-    <div className="card">
-      <div className="card-header">
+    <div className={styles.card}>
+      <div className={styles.cardHeader}>
         <h2>{name}</h2>
         <div className="notice-card" style={{ color: "red" }}>
           {yearsEmployed < 0.5 && <p>🔔 Schedule probation review.</p>}
@@ -96,7 +97,7 @@ export default function PersonCard({
       </p>
       <p>Start date: {startDate}</p>
       <p>Years employed: {yearsEmployed}</p>
-      <div className="editable-card">
+      <div className={styles.editableCard}>
         {renderEditForm(person.salary, "Salary")}
         {renderEditForm(person.location, "Location")}
         {renderEditForm(person.department, "Department")}
