@@ -9,7 +9,7 @@ import AddEmployee from "./components/AddEmployee";
 import About from "./components/About";
 
 function App() {
-  const { get, post, del } = useAxios();
+  const { get, post, del, BASE_URL } = useAxios();
   const [employees, setEmployees] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -25,13 +25,13 @@ function App() {
   });
 
   useEffect(() => {
-    get("http://localhost:3001/employees").then((response) => {
+    get(BASE_URL).then((response) => {
       setEmployees(response.data);
     });
   }, []);
 
   const handleClick = () => {
-    post("http://localhost:3001/employees", {
+    post(BASE_URL, {
       ...formData,
       skills: formData.skills
         ? formData.skills.split(", ").map((skill) => skill.trim())
@@ -43,7 +43,7 @@ function App() {
   };
 
   const handleDeleteEmployee = (id) => {
-    del(`http://localhost:3001/employees/${id}`).then((response) => {
+    del(`${BASE_URL}/${id}`).then((response) => {
       setEmployees((prevEmployees) =>
         prevEmployees.filter((employee) => employee.id !== id)
       );
