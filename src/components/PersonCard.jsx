@@ -2,6 +2,8 @@ import animalEmojis from "../assets/animalEmojis.json";
 import { useState } from "react";
 import useAxios from "../hooks/useAxios";
 import styles from "./PersonCard.module.css";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 export default function PersonCard({
   name,
@@ -16,6 +18,7 @@ export default function PersonCard({
   skills,
   id,
   handleDeleteEmployee,
+  loading,
 }) {
   const yearsEmployed =
     new Date().getFullYear() - new Date(startDate).getFullYear();
@@ -74,6 +77,18 @@ export default function PersonCard({
       </p>
     );
   };
+
+  if (loading) {
+    return (
+      <div className={styles.card}>
+        <Box
+          sx={{ display: "flex", justifyContent: "center", padding: "2rem" }}
+        >
+          <CircularProgress />
+        </Box>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.card}>

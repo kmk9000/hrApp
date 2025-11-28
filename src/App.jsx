@@ -15,7 +15,7 @@ function App() {
   const { get, post, del, BASE_URL } = useAxios();
   const [loading, setLoading] = useState(true);
 
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     title: "",
@@ -62,17 +62,17 @@ function App() {
     });
   };
 
-  if (loading) {
-    return (
-      <div>
-        <Box
-          sx={{ display: "flex", justifyContent: "center", marginTop: "20%" }}
-        >
-          <CircularProgress />
-        </Box>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div>
+  //       <Box
+  //         sx={{ display: "flex", justifyContent: "center", marginTop: "20%" }}
+  //       >
+  //         <CircularProgress />
+  //       </Box>
+  //     </div>
+  //   );
+  // }
 
   return (
     <Router basename="/hrApp">
@@ -86,6 +86,7 @@ function App() {
                 <PersonList
                   employees={employees}
                   onDelete={handleDeleteEmployee}
+                  loading={loading}
                 />
               }
             />
