@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useAxios from "./hooks/useAxios";
 
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PersonList from "./components/PersonList";
@@ -60,7 +63,15 @@ function App() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Box
+          sx={{ display: "flex", justifyContent: "center", marginTop: "20%" }}
+        >
+          <CircularProgress />
+        </Box>
+      </div>
+    );
   }
 
   return (
