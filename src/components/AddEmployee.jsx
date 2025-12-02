@@ -1,4 +1,6 @@
+import { Typography } from "@mui/material";
 import styles from "./AddEmployee.module.css";
+import Button from "@mui/material/Button";
 
 export default function AddEmployee({ formData, setFormData, handleClick }) {
   const handleChange = (e) => {
@@ -35,7 +37,9 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
 
   return (
     <div className={styles.card}>
-      <h2>Add Employee</h2>
+      <Typography>
+        <h2>Add Employee</h2>
+      </Typography>
       <form onSubmit={handleSubmit} className={styles.form}>
         {/* {Object.keys(formData).map((key) => (
           <div key={key}>
@@ -132,8 +136,11 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
           onChange={handleChange}
         />
 
-        <button type="submit">Add employee</button>
-        <button
+        <Button variant="contained" type="submit">
+          Add employee
+        </Button>
+        <Button
+          variant="contained"
           type="reset"
           onClick={() => {
             setFormData({
@@ -151,7 +158,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
           }}
         >
           Reset
-        </button>
+        </Button>
       </form>
     </div>
   );

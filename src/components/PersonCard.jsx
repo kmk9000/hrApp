@@ -4,6 +4,7 @@ import useAxios from "../hooks/useAxios";
 import styles from "./PersonCard.module.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
 export default function PersonCard({
   name,
@@ -125,25 +126,28 @@ export default function PersonCard({
       {/* ?? nullish coalescing operator, if first condition is undefined, it will do the second
       this was an issue because using a method like join broke the site when skills was undefined
       REMEMBER THIS*/}
-      <button
+      <Button
+        variant="contained"
         onClick={() => {
           if (isEditing) handleEdit();
           setIsEditing((prev) => !prev);
         }}
       >
         {isEditing ? "Save" : "Edit"}
-      </button>
+      </Button>
       {isEditing && (
-        <button
+        <Button
+          variant="contained"
           onClick={() => {
             if (isEditing) handleEdit();
             setIsEditing((prev) => !prev);
           }}
         >
           Cancel
-        </button>
+        </Button>
       )}
-      <button
+      <Button
+        variant="contained"
         onClick={() => {
           if (window.confirm(`Are you sure you want to delete ${name}`)) {
             handleDeleteEmployee(id);
@@ -151,7 +155,7 @@ export default function PersonCard({
         }}
       >
         Delete
-      </button>
+      </Button>
     </div>
   );
 }
