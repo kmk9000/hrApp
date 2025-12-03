@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, useLocation, useMatch } from "react-router-dom";
+import { Link, useMatch } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -19,7 +19,6 @@ const pages = [
 ];
 export default function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const location = useLocation();
 
   const isActive = (path) => {
     const match = useMatch({ path, end: path === "/" });

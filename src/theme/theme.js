@@ -29,6 +29,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          margin: "0.25rem 0.5rem",
+        },
+      },
+    },
   },
 });
 

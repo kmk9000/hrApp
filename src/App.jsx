@@ -76,35 +76,33 @@ function App() {
 
   return (
     <Router basename="/hrApp/">
-      <div className="container">
-        <Header />
-        <main>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <PersonList
-                  employees={employees}
-                  onDelete={handleDeleteEmployee}
-                  loading={loading}
-                />
-              }
-            />
-            <Route path="/about" element={<About />} />
-            <Route
-              path="/add-employee"
-              element={
-                <AddEmployee
-                  formData={formData}
-                  setFormData={setFormData}
-                  handleClick={handleClick}
-                />
-              }
-            />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PersonList
+                employees={employees}
+                onDelete={handleDeleteEmployee}
+                loading={loading}
+              />
+            }
+          />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/add-employee"
+            element={
+              <AddEmployee
+                formData={formData}
+                setFormData={setFormData}
+                handleClick={handleClick}
+              />
+            }
+          />
+        </Routes>
+      </main>
+      <Footer />
     </Router>
   );
 }
