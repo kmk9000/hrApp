@@ -5,6 +5,8 @@ import styles from "./PersonCard.module.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
 export default function PersonCard({
   name,
@@ -81,18 +83,24 @@ export default function PersonCard({
 
   if (loading) {
     return (
-      <div className={styles.card}>
-        <Box
-          sx={{ display: "flex", justifyContent: "center", padding: "2rem" }}
-        >
-          <CircularProgress />
-        </Box>
-      </div>
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "2rem",
+          width: 400,
+        }}
+      >
+        <CircularProgress />
+      </Card>
     );
   }
 
   return (
-    <div className={styles.card}>
+    <Card
+      variant="outlined"
+      sx={{ padding: "1rem", margin: "0.5rem 1rem", width: 400 }}
+    >
       <div className={styles.cardHeader}>
         <h2>{name}</h2>
         <div className={styles.noticeCardRed}>
@@ -156,6 +164,6 @@ export default function PersonCard({
       >
         Delete
       </Button>
-    </div>
+    </Card>
   );
 }

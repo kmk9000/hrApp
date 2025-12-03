@@ -4,8 +4,6 @@ export default function PersonList({ employees, onDelete, loading }) {
     return (
       <>
         <PersonCard loading={true} />
-        <PersonCard loading={true} />
-        <PersonCard loading={true} />
       </>
     );
   }
