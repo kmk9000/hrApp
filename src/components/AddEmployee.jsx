@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import styles from "./AddEmployee.module.css";
 import Button from "@mui/material/Button";
 
@@ -36,11 +36,11 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
   };
 
   return (
-    <div className={styles.card}>
-      <Typography>
-        <h2>Add Employee</h2>
+    <>
+      <Typography variant="h4" gutterBottom>
+        Add Employee
       </Typography>
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={handleSubmit}>
         {/* {Object.keys(formData).map((key) => (
           <div key={key}>
             <label htmlFor={key}>{key}</label>
@@ -52,88 +52,99 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
             />
           </div>
         ))} */}
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
+        <TextField
+          label="Name"
           name="name"
           value={formData.name}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="title">Title</label>
-        <input
-          id="title"
+        <TextField
+          label="Title"
           name="title"
           value={formData.title}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="salary">Salary</label>
-        <input
-          id="salary"
+        <TextField
+          label="Salary"
           name="salary"
           type="number"
           value={formData.salary}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="phone">Phone</label>
-        <input
-          id="phone"
+        <TextField
+          label="Phone"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
+        <TextField
+          label="Email"
           name="email"
           type="email"
           value={formData.email}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="animal">Animal</label>
-        <input
-          id="animal"
+        <TextField
+          label="Animal"
           name="animal"
           value={formData.animal}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="startDate">Start date</label>
-        <input
-          id="startDate"
+        <TextField
+          label="Start Date"
           name="startDate"
           type="date"
           value={formData.startDate}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
+          InputLabelProps={{ shrink: true }}
         />
 
-        <label htmlFor="location">Location</label>
-        <input
-          id="location"
+        <TextField
+          label="Location"
           name="location"
           value={formData.location}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="department">Department</label>
-        <input
-          id="department"
+        <TextField
+          label="Department"
           name="department"
           value={formData.department}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="skills">Skills</label>
-        <input
-          id="skills"
+        <TextField
+          label="Skills"
           name="skills"
           placeholder="Please separate skills with a comma"
           value={formData.skills}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
         <Button variant="contained" type="submit">
@@ -160,6 +171,6 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
           Reset
         </Button>
       </form>
-    </div>
+    </>
   );
 }
