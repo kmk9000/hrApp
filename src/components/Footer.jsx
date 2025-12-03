@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <Typography variant="h6" gutterBottom>
-        <h3>Copyright © 2025 Kalle Koivuniemi WP2025K. All rights reserved.</h3>
+        Copyright © 2025 Kalle Koivuniemi WP2025K. All rights reserved.
       </Typography>
       <Button
         variant="contained"
