@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import PersonList from "./components/PersonList";
 import AddEmployee from "./components/AddEmployee";
 import About from "./components/About";
+import EmployeesTable from "./components/EmployeeTable";
 
 function App() {
   const { get, post, del, BASE_URL } = useAxios();
@@ -63,18 +64,6 @@ function App() {
     });
   };
 
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <Box
-  //         sx={{ display: "flex", justifyContent: "center", marginTop: "20%" }}
-  //       >
-  //         <CircularProgress />
-  //       </Box>
-  //     </div>
-  //   );
-  // }
-
   return (
     <Router basename="/hrApp/">
       <Box
@@ -104,6 +93,7 @@ function App() {
                 />
               }
             />
+            <Route path="employee-table" element={<EmployeesTable />}></Route>
           </Routes>
         </main>
         <Footer />

@@ -16,13 +16,16 @@ const pages = [
   { name: "Persons", path: "/" },
   { name: "About", path: "/about" },
   { name: "Add Employee", path: "/add-employee" },
+  { name: "Employee Table", path: "/employee-table" },
 ];
 export default function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const isActive = (path) => {
-    const match = useMatch({ path, end: path === "/" });
-    return Boolean(match);
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname === path;
   };
 
   const handleOpenNavMenu = (event) => {
