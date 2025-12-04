@@ -1,5 +1,5 @@
 import { Typography, Button, Box } from "@mui/material";
-// import styles from "./Footer.module.css";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -18,17 +18,20 @@ export default function Footer() {
         p: 2,
         bgcolor: "primary.main",
         color: "white",
+        position: "relative",
       }}
     >
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h7" gutterBottom>
         Copyright © 2025 Kalle Koivuniemi WP2025K. All rights reserved.
       </Typography>
       <Button
-        variant="contained"
+        variant="text"
         onClick={scrollToTop}
         className="scroll-to-top"
+        startIcon={<ArrowUpwardIcon />}
+        sx={{ position: "absolute", right: 16, color: "white" }}
       >
-        ↑ Back to Top
+        Back to Top
       </Button>
     </Box>
   );

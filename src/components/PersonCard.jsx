@@ -3,7 +3,7 @@ import { useState } from "react";
 import useAxios from "../hooks/useAxios";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-// import styles from "./PersonCard.module.css";
+
 import {
   CircularProgress,
   Box,
@@ -16,7 +16,6 @@ import {
   Alert,
   Divider,
   TextField,
-  Paper,
 } from "@mui/material";
 
 export default function PersonCard({

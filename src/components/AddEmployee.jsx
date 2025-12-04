@@ -1,3 +1,4 @@
+import { PersonAdd, RestartAlt } from "@mui/icons-material";
 import { Box, Card, TextField, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 
@@ -35,8 +36,14 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
   };
 
   return (
-    <Card sx={{ padding: "2rem", margin: "1rem 2rem", maxWidth: 800 }}>
-      <Typography variant="h4" gutterBottom>
+    <Card
+      sx={{
+        padding: "2rem",
+        margin: "1rem 2rem",
+        maxWidth: 800,
+      }}
+    >
+      <Typography variant="h4" sx={{ textAlign: "center" }} gutterBottom>
         Add Employee
       </Typography>
       <form onSubmit={handleSubmit}>
@@ -156,11 +163,12 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
           margin="normal"
         />
         <Box>
-          <Button variant="contained" type="submit">
+          <Button variant="contained" type="submit" startIcon={<PersonAdd />}>
             Add employee
           </Button>
           <Button
             variant="contained"
+            startIcon={<RestartAlt />}
             type="reset"
             onClick={() => {
               setFormData({
