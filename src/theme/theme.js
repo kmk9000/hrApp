@@ -1,6 +1,17 @@
 import { createTheme } from "@mui/material";
 
 const theme = createTheme({
+  typography: {
+    bodyJustified: {
+      fontSize: "1rem",
+      lineHeight: 1.5,
+      textAlign: "justify",
+      textAlignLast: "left",
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      fontWeight: 400,
+      marginTop: "1rem",
+    },
+  },
   components: {
     MuiCssBaseline: {
       styleOverrides: {

@@ -5,6 +5,7 @@ import {
   TableCell,
   TableContainer,
   TableHead,
+  TablePagination,
   TableRow,
 } from "@mui/material";
 import useAxios from "../hooks/useAxios";
@@ -12,9 +13,20 @@ import { useEffect, useState } from "react";
 
 const EmployeesTable = () => {
   const { get, BASE_URL } = useAxios();
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(0);
+  const rowsPerPage = 10;
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const paginatedData = data.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
 
   useEffect(() => {
     get(BASE_URL)
@@ -41,7 +53,7 @@ const EmployeesTable = () => {
   }
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ m: 4 }}>
       <Table>
         <TableHead>
           <TableRow>
@@ -51,11 +63,10 @@ const EmployeesTable = () => {
             <TableCell>Salary</TableCell>
             <TableCell>Phone</TableCell>
             <TableCell>Animal</TableCell>
-            <TableCell>Favourite</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((employee) => (
+          {paginatedData.map((employee) => (
             <TableRow key={employee.id}>
               <TableCell>{employee.id}</TableCell>
               <TableCell>{employee.name}</TableCell>
@@ -63,11 +74,18 @@ const EmployeesTable = () => {
               <TableCell>{employee.salary}</TableCell>
               <TableCell>{employee.phone}</TableCell>
               <TableCell>{employee.animal}</TableCell>
-              <TableCell>{employee.isFavourite ? "Yes" : "No"}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+      <TablePagination
+        component="div"
+        count={data.length}
+        page={page}
+        onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
+        rowsPerPageOptions={[]}
+      />
     </TableContainer>
   );
 };
