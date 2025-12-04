@@ -1,9 +1,9 @@
-import styles from "./About.module.css";
+import { Typography, Card } from "@mui/material";
 
 export default function About() {
   return (
-    <div className={styles.aboutCard}>
-      <h2>About hrApp</h2>
+    <Card sx={{ padding: "2rem", margin: "1rem", maxWidth: 800 }}>
+      <Typography variant="h3">About hrApp</Typography>
       <p>
         This is a simple HR management application for tracking employees. What
         <i> about</i> it, huh?
@@ -45,6 +45,6 @@ export default function About() {
         Vivamus malesuada auctor eleifend. Phasellus malesuada rhoncus diam,
         quis posuere lacus dignissim mollis. Vivamus
       </p>
-    </div>
+    </Card>
   );
 }

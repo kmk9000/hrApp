@@ -9,7 +9,6 @@ export default function Footer() {
     });
   };
   return (
-    // <footer className={styles.footer}>
     <Box
       sx={{
         display: "flex",
@@ -32,7 +31,5 @@ export default function Footer() {
         ↑ Back to Top
       </Button>
     </Box>
-
-    // </footer>
   );
 }

@@ -4,11 +4,22 @@ const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
+        body: {
+          margin: 0,
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        },
+        "#root": {
+          display: "flex",
+          flexDirection: "column",
+          flexGrow: 1,
+        },
         main: {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
-          minHeight: "80vh",
+          flexGrow: 1,
           padding: "2rem 0",
         },
       },
@@ -34,6 +45,11 @@ const theme = createTheme({
         root: {
           margin: "0.25rem 0.5rem",
         },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: { boxShadow: "0 4px 8px slategrey" },
       },
     },
   },

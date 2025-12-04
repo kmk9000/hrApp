@@ -1,5 +1,4 @@
-import { TextField, Typography } from "@mui/material";
-import styles from "./AddEmployee.module.css";
+import { Card, TextField, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 
 export default function AddEmployee({ formData, setFormData, handleClick }) {
@@ -36,7 +35,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
   };
 
   return (
-    <>
+    <Card sx={{ padding: "2rem", margin: "1rem 2rem", maxWidth: 800 }}>
       <Typography variant="h4" gutterBottom>
         Add Employee
       </Typography>
@@ -171,6 +170,6 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
           Reset
         </Button>
       </form>
-    </>
+    </Card>
   );
 }

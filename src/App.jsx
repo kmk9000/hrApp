@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useAxios from "./hooks/useAxios";
+import Box from "@mui/material/Box";
 
 // import CircularProgress from "@mui/material/CircularProgress";
 // import Box from "@mui/material/Box";
@@ -76,33 +77,37 @@ function App() {
 
   return (
     <Router basename="/hrApp/">
-      <Header />
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <PersonList
-                employees={employees}
-                onDelete={handleDeleteEmployee}
-                loading={loading}
-              />
-            }
-          />
-          <Route path="/about" element={<About />} />
-          <Route
-            path="/add-employee"
-            element={
-              <AddEmployee
-                formData={formData}
-                setFormData={setFormData}
-                handleClick={handleClick}
-              />
-            }
-          />
-        </Routes>
-      </main>
-      <Footer />
+      <Box
+        sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      >
+        <Header />
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <PersonList
+                  employees={employees}
+                  onDelete={handleDeleteEmployee}
+                  loading={loading}
+                />
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route
+              path="/add-employee"
+              element={
+                <AddEmployee
+                  formData={formData}
+                  setFormData={setFormData}
+                  handleClick={handleClick}
+                />
+              }
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </Box>
     </Router>
   );
 }
