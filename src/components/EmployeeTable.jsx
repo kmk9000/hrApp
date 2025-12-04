@@ -53,7 +53,7 @@ const EmployeesTable = () => {
   }
 
   return (
-    <TableContainer component={Paper} sx={{ m: 4 }}>
+    <TableContainer component={Paper} sx={{ m: 4, alignSelf: "center" }}>
       <Table>
         <TableHead>
           <TableRow>
