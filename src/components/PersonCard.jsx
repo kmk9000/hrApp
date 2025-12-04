@@ -7,6 +7,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import CardHeader from "@mui/material/CardHeader";
+import Avatar from "@mui/material/Avatar";
+import Typography from "@mui/material/Typography";
 
 export default function PersonCard({
   name,
@@ -101,8 +104,38 @@ export default function PersonCard({
       variant="outlined"
       sx={{ padding: "1rem", margin: "0.5rem 1rem", width: 400 }}
     >
-      <div className={styles.cardHeader}>
-        <h2>{name}</h2>
+      <CardHeader
+        avatar={
+          <Avatar
+            sx={{
+              width: 56,
+              height: 56,
+              fontSize: "2rem",
+              bgcolor: "primary.light",
+            }}
+          >
+            {animalEmojis[animal] ?? "❓"}
+          </Avatar>
+        }
+        title={
+          <Typography variant="h6" component="div" fontWeight="bold">
+            {name}
+          </Typography>
+        }
+        subheader={
+          <Typography variant="body2" color="text.secondary">
+            {title}
+          </Typography>
+        }
+        sx={{
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          color: "white",
+          "& .MuiCardHeader-subheader": {
+            color: "rgba(255, 255, 255, 0.9)",
+          },
+        }}
+      />
+      <Box sx={{ border: "solid 2px black" }}>
         <div className={styles.noticeCardRed}>
           {yearsEmployed < 0.5 && <p>🔔 Schedule probation review.</p>}
         </div>
@@ -111,8 +144,7 @@ export default function PersonCard({
           {yearsEmployed === 10 && <p>🎉 Schedule recognition meeting. </p>}
           {yearsEmployed === 15 && <p>🎉 Schedule recognition meeting. </p>}
         </div>
-      </div>
-      <p>Title: {title}</p>
+      </Box>
       <p>Phone: {phone}</p>
       <p>Email: {email}</p>
       <p>
