@@ -7,6 +7,7 @@ import {
   TableHead,
   TablePagination,
   TableRow,
+  TableSortLabel,
 } from "@mui/material";
 import useAxios from "../hooks/useAxios";
 import { useEffect, useState } from "react";
@@ -16,14 +17,51 @@ const EmployeesTable = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [orderBy, setOrderBy] = useState("");
+  const [order, setOrder] = useState("asc");
+
   const [page, setPage] = useState(0);
   const rowsPerPage = 10;
+
+  const handleSort = (property) => {
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
+    setOrderBy(property);
+    setPage(0); // Reset to first page when sorting
+  };
+
+  const sortData = (array) => {
+    if (!orderBy) return array;
+
+    return [...array].sort((a, b) => {
+      let aValue = a[orderBy];
+      let bValue = b[orderBy];
+
+      // Handle salary as numbers
+      if (orderBy === "salary") {
+        aValue = parseFloat(aValue) || 0;
+        bValue = parseFloat(bValue) || 0;
+      } else {
+        // Handle name as strings (case-insensitive)
+        aValue = String(aValue).toLowerCase();
+        bValue = String(bValue).toLowerCase();
+      }
+
+      if (order === "asc") {
+        return aValue > bValue ? 1 : aValue < bValue ? -1 : 0;
+      } else {
+        return aValue < bValue ? 1 : aValue > bValue ? -1 : 0;
+      }
+    });
+  };
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
 
-  const paginatedData = data.slice(
+  const sortedData = sortData(data);
+  const paginatedData = sortedData.slice(
     page * rowsPerPage,
     page * rowsPerPage + rowsPerPage
   );
@@ -58,9 +96,25 @@ const EmployeesTable = () => {
         <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
-            <TableCell>Name</TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === "name"}
+                direction={orderBy === "name" ? order : "asc"}
+                onClick={() => handleSort("name")}
+              >
+                Name
+              </TableSortLabel>
+            </TableCell>
             <TableCell>Title</TableCell>
-            <TableCell>Salary</TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === "salary"}
+                direction={orderBy === "salary" ? order : "asc"}
+                onClick={() => handleSort("salary")}
+              >
+                Salary
+              </TableSortLabel>
+            </TableCell>
             <TableCell>Phone</TableCell>
             <TableCell>Animal</TableCell>
           </TableRow>
