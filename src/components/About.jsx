@@ -8,8 +8,8 @@ export default function About() {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
-        padding: "2rem",
-        margin: "1rem",
+        p: "2rem",
+        m: "1rem",
         maxWidth: 800,
       }}
     >

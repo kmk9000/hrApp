@@ -35,8 +35,14 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
   };
 
   return (
-    <Card sx={{ padding: "2rem", margin: "1rem 2rem", maxWidth: 800 }}>
-      <Typography variant="h4" gutterBottom>
+    <Card
+      sx={{
+        padding: "2rem",
+        margin: "1rem 2rem",
+        maxWidth: 800,
+      }}
+    >
+      <Typography variant="h4" sx={{ textAlign: "center" }} gutterBottom>
         Add Employee
       </Typography>
       <form onSubmit={handleSubmit}>
