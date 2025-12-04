@@ -29,6 +29,7 @@ const theme = createTheme({
         main: {
           display: "flex",
           justifyContent: "center",
+          aligntItems: "center",
           flexWrap: "wrap",
           flexGrow: 1,
           padding: "2rem 0",
