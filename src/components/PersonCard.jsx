@@ -1,7 +1,23 @@
 import animalEmojis from "../assets/animalEmojis.json";
 import { useState } from "react";
 import useAxios from "../hooks/useAxios";
-import styles from "./PersonCard.module.css";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+// import styles from "./PersonCard.module.css";
+import {
+  CircularProgress,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  Avatar,
+  Typography,
+  Alert,
+  Divider,
+  TextField,
+  Paper,
+} from "@mui/material";
 
 export default function PersonCard({
   name,
@@ -16,6 +32,7 @@ export default function PersonCard({
   skills,
   id,
   handleDeleteEmployee,
+  loading,
 }) {
   const yearsEmployed =
     new Date().getFullYear() - new Date(startDate).getFullYear();
@@ -60,83 +77,179 @@ export default function PersonCard({
     const displayName = field ? capitalizeWords(field) : "N/A";
 
     return isEditing ? (
-      <p>
-        {displayName}:
-        <input
-          value={value || ""}
-          name={field.toLowerCase()}
-          onChange={handleInputChange}
-        />
-      </p>
+      <TextField
+        variant="standard"
+        label={displayName}
+        value={value || ""}
+        name={field.toLowerCase()}
+        onChange={handleInputChange}
+        size="small"
+        fullWidth
+        sx={{ mb: 2 }}
+      />
     ) : (
-      <p>
-        {displayName}: {displayValue}
-      </p>
+      <>
+        <Divider sx={{ my: 2 }} />
+        <Typography variant="body2" color="text.secondary" gutterBottom>
+          <strong>{displayName}:</strong> {displayValue}
+        </Typography>
+      </>
     );
   };
 
-  return (
-    <div className={styles.card}>
-      <div className={styles.cardHeader}>
-        <h2>{name}</h2>
-        <div className={styles.noticeCardRed}>
-          {yearsEmployed < 0.5 && <p>🔔 Schedule probation review.</p>}
-        </div>
-        <div className={styles.noticeCardGreen}>
-          {yearsEmployed === 5 && <p>🎉 Schedule recognition meeting. </p>}
-          {yearsEmployed === 10 && <p>🎉 Schedule recognition meeting. </p>}
-          {yearsEmployed === 15 && <p>🎉 Schedule recognition meeting. </p>}
-        </div>
-      </div>
-      <p>Title: {title}</p>
-      <p>Phone: {phone}</p>
-      <p>Email: {email}</p>
-      <p>
-        Favorite animal:
-        {animalEmojis[animal] ?? "❓"}
-      </p>
-      <p>Start date: {startDate}</p>
-      <p>Years employed: {yearsEmployed}</p>
-      <div className={styles.editableCard}>
-        {renderEditForm(person.salary, "Salary")}
-        {renderEditForm(person.location, "Location")}
-        {renderEditForm(person.department, "Department")}
-        {renderEditForm(person.skills, "Skills")}
-      </div>
-      {/* <p>Salary: {salary}</p>
-      <p>Location: {location}</p>
-      <p>Department: {department}</p>
-      <p>Skills: {(skills ?? []).join(", ")}</p> */}
-      {/* ?? nullish coalescing operator, if first condition is undefined, it will do the second
-      this was an issue because using a method like join broke the site when skills was undefined
-      REMEMBER THIS*/}
-      <button
-        onClick={() => {
-          if (isEditing) handleEdit();
-          setIsEditing((prev) => !prev);
+  if (loading) {
+    return (
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "2rem",
+          width: 400,
         }}
       >
-        {isEditing ? "Save" : "Edit"}
-      </button>
-      {isEditing && (
-        <button
-          onClick={() => {
-            if (isEditing) handleEdit();
-            setIsEditing((prev) => !prev);
+        <CircularProgress />
+      </Card>
+    );
+  }
+
+  return (
+    <Card
+      variant="outlined"
+      sx={{
+        padding: "1rem",
+        margin: "0.5rem 1rem",
+        width: 400,
+        position: "relative",
+      }}
+    >
+      <CardHeader
+        avatar={
+          <Avatar
+            sx={{
+              width: 56,
+              height: 56,
+              fontSize: "2rem",
+              bgcolor: "primary.light",
+            }}
+          >
+            {animalEmojis[animal] ?? "❓"}
+          </Avatar>
+        }
+        title={
+          <Typography variant="h6" component="div" fontWeight="bold">
+            {name}
+          </Typography>
+        }
+        subheader={
+          <Typography variant="body2" color="text.secondary">
+            {title}
+          </Typography>
+        }
+        sx={{
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          color: "white",
+          "& .MuiCardHeader-subheader": {
+            color: "rgba(255, 255, 255, 0.9)",
+          },
+        }}
+      />
+      <CardContent>
+        {/* notifications */}
+        {yearsEmployed < 0.5 && (
+          <Alert severity="warning" sx={{ mb: 2 }}>
+            🔔 Schedule probation review.
+          </Alert>
+        )}
+        {(yearsEmployed === 5 ||
+          yearsEmployed === 10 ||
+          yearsEmployed === 15) && (
+          <Alert severity="success" sx={{ mb: 2 }}>
+            🎉 Schedule recognition meeting.
+          </Alert>
+        )}
+        {/* contact info + employment time */}
+        <Box sx={{ p: 2, mb: 2 }}>
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            <strong>Phone:</strong> {phone}
+            <Divider sx={{ my: 2 }} />
+          </Typography>
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            <strong>Email:</strong> {email}
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            <strong>Start Date:</strong> {startDate}
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <Typography variant="body2" color="text.secondary">
+            <strong>Years Employed:</strong> {yearsEmployed}
+          </Typography>
+          {/* <Typography variant="h7">Editable Fields:</Typography>
+          <br /> */}
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            {renderEditForm(person.salary, "Salary")}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            {renderEditForm(person.location, "Location")}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            {renderEditForm(person.department, "Department")}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            {renderEditForm(person.skills, "Skills")}
+          </Typography>
+        </Box>
+
+        {/* edit and delete buttons */}
+        <Box
+          sx={{
+            display: "flex",
+            position: "absolute",
+            bottom: 16,
+            left: 0,
+            right: 0,
+            mx: "auto",
+            justifyContent: "center",
+            alignContent: "center",
+            gap: 1,
           }}
         >
-          Cancel
-        </button>
-      )}
-      <button
-        onClick={() => {
-          if (window.confirm(`Are you sure you want to delete ${name}`)) {
-            handleDeleteEmployee(id);
-          }
-        }}
-      >
-        Delete
-      </button>
-    </div>
+          {" "}
+          <Button
+            variant="contained"
+            startIcon={<EditIcon />}
+            onClick={() => {
+              if (isEditing) handleEdit();
+              setIsEditing((prev) => !prev);
+            }}
+          >
+            {isEditing ? "Save" : "Edit"}
+          </Button>
+          {isEditing && (
+            <Button
+              variant="contained"
+              onClick={() => {
+                if (isEditing) handleEdit();
+                setIsEditing((prev) => !prev);
+              }}
+            >
+              Cancel
+            </Button>
+          )}
+          <Button
+            variant="contained"
+            color="error"
+            startIcon={<DeleteIcon />}
+            onClick={() => {
+              if (window.confirm(`Are you sure you want to delete ${name}`)) {
+                handleDeleteEmployee(id);
+              }
+            }}
+          >
+            Delete
+          </Button>
+        </Box>
+      </CardContent>
+    </Card>
   );
 }

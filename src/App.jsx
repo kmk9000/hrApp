@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useAxios from "./hooks/useAxios";
+import Box from "@mui/material/Box";
+
+// import CircularProgress from "@mui/material/CircularProgress";
+// import Box from "@mui/material/Box";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PersonList from "./components/PersonList";
 import AddEmployee from "./components/AddEmployee";
 import About from "./components/About";
+import EmployeesTable from "./components/EmployeeTable";
 
 function App() {
   const { get, post, del, BASE_URL } = useAxios();
   const [loading, setLoading] = useState(true);
 
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     title: "",
@@ -59,13 +64,11 @@ function App() {
     });
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <Router basename="/hrApp">
-      <div className="container">
+    <Router basename="/hrApp/">
+      <Box
+        sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      >
         <Header />
         <main>
           <Routes>
@@ -75,6 +78,7 @@ function App() {
                 <PersonList
                   employees={employees}
                   onDelete={handleDeleteEmployee}
+                  loading={loading}
                 />
               }
             />
@@ -89,10 +93,11 @@ function App() {
                 />
               }
             />
+            <Route path="employee-table" element={<EmployeesTable />}></Route>
           </Routes>
         </main>
         <Footer />
-      </div>
+      </Box>
     </Router>
   );
 }

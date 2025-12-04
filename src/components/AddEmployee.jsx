@@ -1,4 +1,5 @@
-import styles from "./AddEmployee.module.css";
+import { Box, Card, TextField, Typography } from "@mui/material";
+import Button from "@mui/material/Button";
 
 export default function AddEmployee({ formData, setFormData, handleClick }) {
   const handleChange = (e) => {
@@ -34,9 +35,11 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
   };
 
   return (
-    <div className={styles.card}>
-      <h2>Add Employee</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
+    <Card sx={{ padding: "2rem", margin: "1rem 2rem", maxWidth: 800 }}>
+      <Typography variant="h4" gutterBottom>
+        Add Employee
+      </Typography>
+      <form onSubmit={handleSubmit}>
         {/* {Object.keys(formData).map((key) => (
           <div key={key}>
             <label htmlFor={key}>{key}</label>
@@ -48,111 +51,136 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
             />
           </div>
         ))} */}
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
+        <TextField
+          variant="standard"
+          label="Name"
           name="name"
           value={formData.name}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="title">Title</label>
-        <input
-          id="title"
+        <TextField
+          variant="standard"
+          label="Title"
           name="title"
           value={formData.title}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="salary">Salary</label>
-        <input
-          id="salary"
+        <TextField
+          variant="standard"
+          label="Salary"
           name="salary"
           type="number"
           value={formData.salary}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="phone">Phone</label>
-        <input
-          id="phone"
+        <TextField
+          variant="standard"
+          label="Phone"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
+        <TextField
+          variant="standard"
+          label="Email"
           name="email"
           type="email"
           value={formData.email}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="animal">Animal</label>
-        <input
-          id="animal"
+        <TextField
+          variant="standard"
+          label="Animal"
           name="animal"
           value={formData.animal}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="startDate">Start date</label>
-        <input
-          id="startDate"
+        <TextField
+          variant="standard"
+          label="Start Date"
           name="startDate"
           type="date"
           value={formData.startDate}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
+          InputLabelProps={{ shrink: true }}
         />
 
-        <label htmlFor="location">Location</label>
-        <input
-          id="location"
+        <TextField
+          variant="standard"
+          label="Location"
           name="location"
           value={formData.location}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="department">Department</label>
-        <input
-          id="department"
+        <TextField
+          variant="standard"
+          label="Department"
           name="department"
           value={formData.department}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
 
-        <label htmlFor="skills">Skills</label>
-        <input
-          id="skills"
+        <TextField
+          variant="standard"
+          label="Skills"
           name="skills"
           placeholder="Please separate skills with a comma"
           value={formData.skills}
           onChange={handleChange}
+          fullWidth
+          margin="normal"
         />
-
-        <button type="submit">Add employee</button>
-        <button
-          type="reset"
-          onClick={() => {
-            setFormData({
-              name: "",
-              title: "",
-              salary: "",
-              phone: "",
-              email: "",
-              animal: "",
-              startDate: "",
-              location: "",
-              department: "",
-              skills: "",
-            });
-          }}
-        >
-          Reset
-        </button>
+        <Box>
+          <Button variant="contained" type="submit">
+            Add employee
+          </Button>
+          <Button
+            variant="contained"
+            type="reset"
+            onClick={() => {
+              setFormData({
+                name: "",
+                title: "",
+                salary: "",
+                phone: "",
+                email: "",
+                animal: "",
+                startDate: "",
+                location: "",
+                department: "",
+                skills: "",
+              });
+            }}
+          >
+            Reset
+          </Button>
+        </Box>
       </form>
-    </div>
+    </Card>
   );
 }
