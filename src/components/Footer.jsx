@@ -1,5 +1,4 @@
 import { Typography, Button, Box } from "@mui/material";
-// import styles from "./Footer.module.css";
 
 export default function Footer() {
   const scrollToTop = () => {
