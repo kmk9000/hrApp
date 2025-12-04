@@ -1,4 +1,4 @@
-import { Card, TextField, Typography } from "@mui/material";
+import { Box, Card, TextField, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 
 export default function AddEmployee({ formData, setFormData, handleClick }) {
@@ -52,6 +52,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
           </div>
         ))} */}
         <TextField
+          variant="standard"
           label="Name"
           name="name"
           value={formData.name}
@@ -61,6 +62,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Title"
           name="title"
           value={formData.title}
@@ -70,6 +72,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Salary"
           name="salary"
           type="number"
@@ -80,6 +83,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Phone"
           name="phone"
           value={formData.phone}
@@ -89,6 +93,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Email"
           name="email"
           type="email"
@@ -99,6 +104,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Animal"
           name="animal"
           value={formData.animal}
@@ -108,6 +114,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Start Date"
           name="startDate"
           type="date"
@@ -119,6 +126,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Location"
           name="location"
           value={formData.location}
@@ -128,6 +136,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Department"
           name="department"
           value={formData.department}
@@ -137,6 +146,7 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
         />
 
         <TextField
+          variant="standard"
           label="Skills"
           name="skills"
           placeholder="Please separate skills with a comma"
@@ -145,30 +155,31 @@ export default function AddEmployee({ formData, setFormData, handleClick }) {
           fullWidth
           margin="normal"
         />
-
-        <Button variant="contained" type="submit">
-          Add employee
-        </Button>
-        <Button
-          variant="contained"
-          type="reset"
-          onClick={() => {
-            setFormData({
-              name: "",
-              title: "",
-              salary: "",
-              phone: "",
-              email: "",
-              animal: "",
-              startDate: "",
-              location: "",
-              department: "",
-              skills: "",
-            });
-          }}
-        >
-          Reset
-        </Button>
+        <Box>
+          <Button variant="contained" type="submit">
+            Add employee
+          </Button>
+          <Button
+            variant="contained"
+            type="reset"
+            onClick={() => {
+              setFormData({
+                name: "",
+                title: "",
+                salary: "",
+                phone: "",
+                email: "",
+                animal: "",
+                startDate: "",
+                location: "",
+                department: "",
+                skills: "",
+              });
+            }}
+          >
+            Reset
+          </Button>
+        </Box>
       </form>
     </Card>
   );
