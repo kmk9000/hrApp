@@ -22,7 +22,7 @@ const EmployeesTable = () => {
   const [order, setOrder] = useState("asc");
 
   const [page, setPage] = useState(0);
-  const rowsPerPage = 10;
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleSort = (property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -58,6 +58,11 @@ const EmployeesTable = () => {
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
   };
 
   const sortedData = sortData(data);
@@ -105,7 +110,15 @@ const EmployeesTable = () => {
                 Name
               </TableSortLabel>
             </TableCell>
-            <TableCell>Title</TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === "title"}
+                direction={orderBy === "title" ? order : "asc"}
+                onClick={() => handleSort("title")}
+              >
+                Title
+              </TableSortLabel>
+            </TableCell>
             <TableCell>
               <TableSortLabel
                 active={orderBy === "salary"}
@@ -115,7 +128,17 @@ const EmployeesTable = () => {
                 Salary
               </TableSortLabel>
             </TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === "location"}
+                direction={orderBy === "location" ? order : "asc"}
+                onClick={() => handleSort("location")}
+              >
+                Location
+              </TableSortLabel>
+            </TableCell>
             <TableCell>Phone</TableCell>
+            <TableCell>Email</TableCell>
             <TableCell>Animal</TableCell>
           </TableRow>
         </TableHead>
@@ -126,7 +149,9 @@ const EmployeesTable = () => {
               <TableCell>{employee.name}</TableCell>
               <TableCell>{employee.title}</TableCell>
               <TableCell>{employee.salary}</TableCell>
+              <TableCell>{employee.location}</TableCell>
               <TableCell>{employee.phone}</TableCell>
+              <TableCell>{employee.email}</TableCell>
               <TableCell>{employee.animal}</TableCell>
             </TableRow>
           ))}
@@ -137,8 +162,9 @@ const EmployeesTable = () => {
         count={data.length}
         page={page}
         onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
         rowsPerPage={rowsPerPage}
-        rowsPerPageOptions={[]}
+        rowsPerPageOptions={[10, 25, 50, 100]}
       />
     </TableContainer>
   );
