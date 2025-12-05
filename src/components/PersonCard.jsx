@@ -61,19 +61,12 @@ export default function PersonCard({
   };
 
   const renderEditForm = (value, field) => {
-    const capitalizeWords = (text) =>
-      text
-        .toString()
-        .replace(
-          /\w\S*/g,
-          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-        );
     const displayValue = value
       ? Array.isArray(value)
         ? value.join(", ")
-        : capitalizeWords(value)
+        : value
       : "N/A";
-    const displayName = field ? capitalizeWords(field) : "N/A";
+    const displayName = field || "N/A";
 
     return isEditing ? (
       <TextField
@@ -187,14 +180,8 @@ export default function PersonCard({
           <br /> */}
           <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.salary, "Salary")}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.location, "Location")}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.department, "Department")}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.skills, "Skills")}
           </Typography>
         </Box>
