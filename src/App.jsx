@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useAxios from "./hooks/useAxios";
 import Box from "@mui/material/Box";
 
-// import CircularProgress from "@mui/material/CircularProgress";
-// import Box from "@mui/material/Box";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -13,7 +15,7 @@ import AddEmployee from "./components/AddEmployee";
 import About from "./components/About";
 import EmployeesTable from "./components/EmployeeTable";
 
-function App() {
+export default function App() {
   const { get, post, del, BASE_URL } = useAxios();
   const [loading, setLoading] = useState(true);
 
@@ -50,7 +52,6 @@ function App() {
       skills: formData.skills
         ? formData.skills.split(", ").map((skill) => skill.trim())
         : [],
-      isFavourite: false,
     }).then((response) => {
       setEmployees([...employees, response.data]);
     });
@@ -101,5 +102,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

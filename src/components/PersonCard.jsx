@@ -32,6 +32,7 @@ export default function PersonCard({
   id,
   handleDeleteEmployee,
   loading,
+  error,
 }) {
   const yearsEmployed =
     new Date().getFullYear() - new Date(startDate).getFullYear();
@@ -61,34 +62,55 @@ export default function PersonCard({
   };
 
   const renderEditForm = (value, field) => {
-    const capitalizeWords = (text) =>
-      text
-        .toString()
-        .replace(
-          /\w\S*/g,
-          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-        );
     const displayValue = value
       ? Array.isArray(value)
         ? value.join(", ")
-        : capitalizeWords(value)
+        : value
       : "N/A";
-    const displayName = field ? capitalizeWords(field) : "N/A";
+    const displayName = field || "N/A";
 
-    return isEditing ? (
-      <TextField
-        variant="standard"
-        label={displayName}
-        value={value || ""}
-        name={field.toLowerCase()}
-        onChange={handleInputChange}
-        size="small"
-        fullWidth
-        sx={{ mb: 2 }}
-      />
-    ) : (
+    if (isEditing) {
+      return (
+        <>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            gutterBottom
+            sx={{ display: "flex" }}
+          >
+            <Box
+              component="span"
+              sx={{ alignSelf: "center", minWidth: 100, fontWeight: "bold" }}
+            >
+              {displayName}:
+            </Box>
+            <TextField
+              variant="standard"
+              value={Array.isArray(value) ? value.join(", ") : value || ""}
+              name={field.toLowerCase()}
+              onChange={handleInputChange}
+              size="small"
+              fullWidth
+              multiline={true}
+              sx={{
+                "& .MuiInput-input": {
+                  fontSize: "0.875rem",
+                  color: "inherit",
+                  padding: 0,
+                },
+                "& .MuiInput-root": {
+                  padding: 0,
+                },
+              }}
+            />
+          </Typography>
+        </>
+      );
+    }
+
+    return (
       <>
-        <Divider sx={{ my: 2 }} />
+        <Divider sx={{ pb: 0.5 }} />
         <Typography variant="body2" color="text.secondary" gutterBottom>
           <strong>{displayName}:</strong> {displayValue}
         </Typography>
@@ -102,11 +124,30 @@ export default function PersonCard({
         sx={{
           display: "flex",
           justifyContent: "center",
+          alignItems: "center",
           padding: "2rem",
           width: 400,
         }}
       >
         <CircularProgress />
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "2rem",
+          width: 400,
+        }}
+      >
+        <Alert severity="error">
+          Error loading employee data: {error.message}
+        </Alert>
       </Card>
     );
   }
@@ -169,32 +210,26 @@ export default function PersonCard({
         {/* contact info + employment time */}
         <Box sx={{ p: 2, mb: 2 }}>
           <Typography variant="body2" color="text.secondary" gutterBottom>
-            <strong>Phone:</strong> {phone}
-            <Divider sx={{ my: 2 }} />
+            <strong>Phone:</strong> {phone ?? "N/A"}
+            <Divider sx={{ pb: 0.5 }} />
           </Typography>
           <Typography variant="body2" color="text.secondary" gutterBottom>
-            <strong>Email:</strong> {email}
+            <strong>Email:</strong> {email ?? "N/A"}
           </Typography>
-          <Divider sx={{ my: 2 }} />
+          <Divider sx={{ pb: 0.5 }} />
           <Typography variant="body2" color="text.secondary" gutterBottom>
-            <strong>Start Date:</strong> {startDate}
+            <strong>Start Date:</strong> {startDate ?? "N/A"}
           </Typography>
-          <Divider sx={{ my: 2 }} />
+          <Divider sx={{ pb: 0.5 }} />
           <Typography variant="body2" color="text.secondary">
-            <strong>Years Employed:</strong> {yearsEmployed}
+            <strong>Years Employed:</strong>{" "}
+            {isNaN(yearsEmployed) ? "Not a number" : yearsEmployed}
           </Typography>
-          {/* <Typography variant="h7">Editable Fields:</Typography>
-          <br /> */}
+          {/* editable fields*/}
           <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.salary, "Salary")}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.location, "Location")}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.department, "Department")}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.skills, "Skills")}
           </Typography>
         </Box>

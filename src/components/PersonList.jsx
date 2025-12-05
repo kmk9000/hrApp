@@ -1,5 +1,5 @@
 import PersonCard from "./PersonCard";
-export default function PersonList({ employees, onDelete, loading }) {
+export default function PersonList({ employees, onDelete, loading, error }) {
   if (!employees) {
     return (
       <>
@@ -14,6 +14,7 @@ export default function PersonList({ employees, onDelete, loading }) {
       {...employee}
       handleDeleteEmployee={onDelete}
       loading={loading}
+      error={error}
     />
   ));
 }
