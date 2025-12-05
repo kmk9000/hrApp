@@ -72,7 +72,7 @@ export default function PersonCard({
       <TextField
         variant="standard"
         label={displayName}
-        value={value || ""}
+        value={Array.isArray(value) ? value.join(", ") : value || ""}
         name={field.toLowerCase()}
         onChange={handleInputChange}
         size="small"
