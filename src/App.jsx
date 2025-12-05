@@ -15,7 +15,7 @@ import AddEmployee from "./components/AddEmployee";
 import About from "./components/About";
 import EmployeesTable from "./components/EmployeeTable";
 
-function App() {
+export default function App() {
   const { get, post, del, BASE_URL } = useAxios();
   const [loading, setLoading] = useState(true);
 
@@ -52,7 +52,6 @@ function App() {
       skills: formData.skills
         ? formData.skills.split(", ").map((skill) => skill.trim())
         : [],
-      isFavourite: false,
     }).then((response) => {
       setEmployees([...employees, response.data]);
     });
@@ -103,5 +102,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

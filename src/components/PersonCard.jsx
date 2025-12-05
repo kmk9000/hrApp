@@ -32,6 +32,7 @@ export default function PersonCard({
   id,
   handleDeleteEmployee,
   loading,
+  error,
 }) {
   const yearsEmployed =
     new Date().getFullYear() - new Date(startDate).getFullYear();
@@ -95,11 +96,30 @@ export default function PersonCard({
         sx={{
           display: "flex",
           justifyContent: "center",
+          alignItems: "center",
           padding: "2rem",
           width: 400,
         }}
       >
         <CircularProgress />
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "2rem",
+          width: 400,
+        }}
+      >
+        <Alert severity="error">
+          Error loading employee data: {error.message}
+        </Alert>
       </Card>
     );
   }
@@ -162,22 +182,22 @@ export default function PersonCard({
         {/* contact info + employment time */}
         <Box sx={{ p: 2, mb: 2 }}>
           <Typography variant="body2" color="text.secondary" gutterBottom>
-            <strong>Phone:</strong> {phone}
+            <strong>Phone:</strong> {phone ?? "N/A"}
             <Divider sx={{ my: 2 }} />
           </Typography>
           <Typography variant="body2" color="text.secondary" gutterBottom>
-            <strong>Email:</strong> {email}
+            <strong>Email:</strong> {email ?? "N/A"}
           </Typography>
           <Divider sx={{ my: 2 }} />
           <Typography variant="body2" color="text.secondary" gutterBottom>
-            <strong>Start Date:</strong> {startDate}
+            <strong>Start Date:</strong> {startDate ?? "N/A"}
           </Typography>
           <Divider sx={{ my: 2 }} />
           <Typography variant="body2" color="text.secondary">
-            <strong>Years Employed:</strong> {yearsEmployed}
+            <strong>Years Employed:</strong>{" "}
+            {isNaN(yearsEmployed) ? "Not a number" : yearsEmployed}
           </Typography>
-          {/* <Typography variant="h7">Editable Fields:</Typography>
-          <br /> */}
+          {/* editable fields*/}
           <Typography variant="body2" color="text.secondary" gutterBottom>
             {renderEditForm(person.salary, "Salary")}
             {renderEditForm(person.location, "Location")}

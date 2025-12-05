@@ -28,7 +28,7 @@ const EmployeesTable = () => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
-    setPage(0); // Reset to first page when sorting
+    setPage(0);
   };
 
   const sortData = (array) => {
