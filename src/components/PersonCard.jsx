@@ -69,20 +69,48 @@ export default function PersonCard({
       : "N/A";
     const displayName = field || "N/A";
 
-    return isEditing ? (
-      <TextField
-        variant="standard"
-        label={displayName}
-        value={Array.isArray(value) ? value.join(", ") : value || ""}
-        name={field.toLowerCase()}
-        onChange={handleInputChange}
-        size="small"
-        fullWidth
-        sx={{ mb: 2 }}
-      />
-    ) : (
+    if (isEditing) {
+      return (
+        <>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            gutterBottom
+            sx={{ display: "flex" }}
+          >
+            <Box
+              component="span"
+              sx={{ alignSelf: "center", minWidth: 100, fontWeight: "bold" }}
+            >
+              {displayName}:
+            </Box>
+            <TextField
+              variant="standard"
+              value={Array.isArray(value) ? value.join(", ") : value || ""}
+              name={field.toLowerCase()}
+              onChange={handleInputChange}
+              size="small"
+              fullWidth
+              multiline={true}
+              sx={{
+                "& .MuiInput-input": {
+                  fontSize: "0.875rem",
+                  color: "inherit",
+                  padding: 0,
+                },
+                "& .MuiInput-root": {
+                  padding: 0,
+                },
+              }}
+            />
+          </Typography>
+        </>
+      );
+    }
+
+    return (
       <>
-        <Divider sx={{ my: 2 }} />
+        <Divider sx={{ pb: 0.5 }} />
         <Typography variant="body2" color="text.secondary" gutterBottom>
           <strong>{displayName}:</strong> {displayValue}
         </Typography>
@@ -183,16 +211,16 @@ export default function PersonCard({
         <Box sx={{ p: 2, mb: 2 }}>
           <Typography variant="body2" color="text.secondary" gutterBottom>
             <strong>Phone:</strong> {phone ?? "N/A"}
-            <Divider sx={{ my: 2 }} />
+            <Divider sx={{ pb: 0.5 }} />
           </Typography>
           <Typography variant="body2" color="text.secondary" gutterBottom>
             <strong>Email:</strong> {email ?? "N/A"}
           </Typography>
-          <Divider sx={{ my: 2 }} />
+          <Divider sx={{ pb: 0.5 }} />
           <Typography variant="body2" color="text.secondary" gutterBottom>
             <strong>Start Date:</strong> {startDate ?? "N/A"}
           </Typography>
-          <Divider sx={{ my: 2 }} />
+          <Divider sx={{ pb: 0.5 }} />
           <Typography variant="body2" color="text.secondary">
             <strong>Years Employed:</strong>{" "}
             {isNaN(yearsEmployed) ? "Not a number" : yearsEmployed}
