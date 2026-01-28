@@ -1,6 +1,6 @@
 # HR App school project
 
-React project. Pulls data from a database, allows the user to add an employee to the database, and also to edit some of the submitted data on the fronted too.
+React project. Pulls data from a database, allows the user to add an employee to the database, and also to edit some of the submitted data on the fronted too. Backend may be slow to load the first time, as it's using a free tier from Render.com, so give it up to a minute to spin up, please.
 
 ## [Project Frontend](https://kmk9000.github.io/hrApp/)
 
